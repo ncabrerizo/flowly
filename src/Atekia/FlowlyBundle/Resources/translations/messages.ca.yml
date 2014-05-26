@@ -1,0 +1,45 @@
+layout:
+    togglenavigation: Canvia navegació
+    home: Portada
+    signin: Inicia sessió
+    signout: Tanca sessió
+    accountsettings: Configuració del compte
+    user: Usuari
+    administrator: Administrador
+    manageusersandpermissions: Administra usuaris i permisos
+    copynotice: © 2014, Atekia. Lliurat sota llicència AGPL.
+
+error:
+    oops: Ups!
+    serverreturnederror: El servidor ha retornat un error <strong>%error%</strong>.
+    pagecouldnotbeloaded: No s'ha pogut carregar la pàgina.
+
+login:
+    title: Inici de sessió
+    username: Nom d'usuari
+    password: Clau
+    signin: Inicia sessió
+    rememberme: Recorda'm
+    needhelp: Necessiteu ajuda?
+    error: Nom d'usuari o clau incorrects
+
+datatable:
+    sEmptyTable: Cap dada disponible en aquesta taula
+    sInfo: Mostrant registres _START_ a _END_ de _TOTAL_
+    sInfoEmpty: No hi ha registres
+    sInfoFiltered: (filtrats d'un total de _MAX_ registres)
+    sInfoPostFix: ""
+    sInfoThousands: ","
+    sLengthMenu: Mostra _MENU_ registres
+    sLoadingRecords: Carregant...
+    sProcessing: Processant...
+    sSearch: Cerca:
+    sZeroRecords: No s'han trobat resultats
+    oPaginate:
+        sFirst: Primer
+        sLast: Últim
+        sNext: Següent
+        sPrevious: Anterior
+    oAria:
+        sSortAscending: ": activar per tal d'ordenar la columna de manera ascendent"
+        sSortDescending: ": activar per tal d'ordenar la columna de manera descendent"

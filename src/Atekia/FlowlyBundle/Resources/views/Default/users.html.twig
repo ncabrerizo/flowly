@@ -1,0 +1,14 @@
+{% extends 'AtekiaUserlyBundle:Layout:base.html.twig' %}
+
+{% block content %}
+
+        <div class="well">
+            User list:
+            <ul>
+            {% for user in users %}
+                <li>{{ user }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+{% endblock %}

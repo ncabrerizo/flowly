@@ -1,0 +1,21 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_sqlite
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: db
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_encryption: null
+    mailer_auth_mode: null
+    mailer_host: localhost
+    mailer_port: 25
+    mailer_user: null
+    mailer_password: null
+    fallback_locale: es
+    available_locales: ["es", "ca", "fr"]
+    secret: 700g4j55u0108B68x18rpwyB37UAGl1a
+    template_parameters:
+        bootstrap:
+            theme: "metro"

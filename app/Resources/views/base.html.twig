@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    {% if not app.debug %}
+
+        {% if template_parameters.bootstrap.theme == "metro" %}
+
+            <link rel="stylesheet" href="{{ asset('css/metro-bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/metro-datepicker3.css') }}">
+
+        {% elseif template_parameters.bootstrap.theme == "cerulean" %}
+
+            <link rel="stylesheet" href="{{ asset('css/cerulean-bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/cerulean-datepicker3.css') }}">
+
+        {% elseif template_parameters.bootstrap.theme == "united" %}
+
+            <link rel="stylesheet" href="{{ asset('css/united-bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/united-datepicker3.css') }}">
+
+        {% elseif template_parameters.bootstrap.theme == "theme" %}
+
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/datepicker3.css') }}">
+
+        {% else %}
+
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/datepicker3.css') }}">
+
+        {% endif %}
+
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/docs.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.css') }}">
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/bootbox.js') }}"></script>
+        <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
+        <script src="{{ asset('js/dataTables.bootstrap.js') }}"></script>
+        <script src="{{ asset('js/jquery.blockUI.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+
+    {% else %}
+
+        {% if template_parameters.bootstrap.theme == "metro" %}
+
+            <link rel="stylesheet" href="{{ asset('css/metro-bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/metro-datepicker3.min.css') }}">
+
+        {% elseif template_parameters.bootstrap.theme == "cerulean" %}
+
+            <link rel="stylesheet" href="{{ asset('css/cerulean-bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/cerulean-datepicker3.min.css') }}">
+
+        {% elseif template_parameters.bootstrap.theme == "united" %}
+
+            <link rel="stylesheet" href="{{ asset('css/united-bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/united-datepicker3.min.css') }}">
+
+        {% elseif template_parameters.bootstrap.theme == "theme" %}
+
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/datepicker3.min.css') }}">
+
+        {% else %}
+
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/datepicker3.min.css') }}">
+
+        {% endif %}
+
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/docs.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.min.css') }}">
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/bootbox.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.blockUI.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+
+    {% endif %}
+
+    <script>
+
+        /* Translation for DatePicker plugin */
+
+        ;(function($){
+            $.fn.datepicker.dates['en'] = {
+                days: ["{{ 'datepicker.days.sunday'|trans|raw }}",
+                    "{{ 'datepicker.days.monday'|trans|raw }}",
+                    "{{ 'datepicker.days.tuesday'|trans|raw }}",
+                    "{{ 'datepicker.days.wednesday'|trans|raw }}",
+                    "{{ 'datepicker.days.thursday'|trans|raw }}",
+                    "{{ 'datepicker.days.friday'|trans|raw }}",
+                    "{{ 'datepicker.days.saturday'|trans|raw }}",
+                    "{{ 'datepicker.days.sunday'|trans|raw }}"],
+                daysShort: ["{{ 'datepicker.daysshort.sunday'|trans|raw }}",
+                    "{{ 'datepicker.daysshort.monday'|trans|raw }}",
+                    "{{ 'datepicker.daysshort.tuesday'|trans|raw }}",
+                    "{{ 'datepicker.daysshort.wednesday'|trans|raw }}",
+                    "{{ 'datepicker.daysshort.thursday'|trans|raw }}",
+                    "{{ 'datepicker.daysshort.friday'|trans|raw }}",
+                    "{{ 'datepicker.daysshort.saturday'|trans|raw }}",
+                    "{{ 'datepicker.daysshort.sunday'|trans|raw }}"],
+                daysMin: ["{{ 'datepicker.daysmin.sunday'|trans|raw }}",
+                    "{{ 'datepicker.daysmin.monday'|trans|raw }}",
+                    "{{ 'datepicker.daysmin.tuesday'|trans|raw }}",
+                    "{{ 'datepicker.daysmin.wednesday'|trans|raw }}",
+                    "{{ 'datepicker.daysmin.thursday'|trans|raw }}",
+                    "{{ 'datepicker.daysmin.friday'|trans|raw }}",
+                    "{{ 'datepicker.daysmin.saturday'|trans|raw }}",
+                    "{{ 'datepicker.daysmin.sunday'|trans|raw }}"],
+                months: ["{{ 'datepicker.months.january'|trans|raw }}",
+                    "{{ 'datepicker.months.february'|trans|raw }}",
+                    "{{ 'datepicker.months.march'|trans|raw }}",
+                    "{{ 'datepicker.months.april'|trans|raw }}",
+                    "{{ 'datepicker.months.may'|trans|raw }}",
+                    "{{ 'datepicker.months.june'|trans|raw }}",
+                    "{{ 'datepicker.months.july'|trans|raw }}",
+                    "{{ 'datepicker.months.august'|trans|raw }}",
+                    "{{ 'datepicker.months.september'|trans|raw }}",
+                    "{{ 'datepicker.months.october'|trans|raw }}",
+                    "{{ 'datepicker.months.november'|trans|raw }}",
+                    "{{ 'datepicker.months.december'|trans|raw }}"],
+                monthsShort: ["{{ 'datepicker.monthsshort.january'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.february'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.march'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.april'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.may'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.june'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.july'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.august'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.september'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.october'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.november'|trans|raw }}",
+                    "{{ 'datepicker.monthsshort.december'|trans|raw }}"],
+                today: "{{ 'datepicker.today'|trans|raw }}"
+            };
+        }(jQuery));
+
+        /* Automatically generate localized DataTables in table.dataTable elements */
+
+        $(document).ready(function() {
+
+            var elm = $('table.dataTable');
+
+            elm.dataTable({
+                "oLanguage": {
+                    "sEmptyTable":     "{{ 'datatable.sEmptyTable'|trans|raw }}",
+                    "sInfo":           "{{ 'datatable.sInfo'|trans|raw }}",
+                    "sInfoEmpty":      "{{ 'datatable.sInfoEmpty'|trans|raw }}",
+                    "sInfoFiltered":   "{{ 'datatable.sInfoFiltered'|trans|raw }}",
+                    "sInfoPostFix":    "{{ 'datatable.sInfoPostFix'|trans|raw }}",
+                    "sInfoThousands":  "{{ 'datatable.sInfoThousands'|trans|raw }}",
+                    "sLengthMenu":     "{{ 'datatable.sLengthMenu'|trans|raw }}",
+                    "sLoadingRecords": "{{ 'datatable.sLoadingRecords'|trans|raw }}",
+                    "sProcessing":     "{{ 'datatable.sProcessing'|trans|raw }}",
+                    "sSearch":         "{{ 'datatable.sSearch'|trans|raw }}",
+                    "sZeroRecords":    "{{ 'datatable.sZeroRecords'|trans|raw }}",
+                    "oPaginate": {
+                        "sFirst":    "{{ 'datatable.oPaginate.sFirst'|trans|raw }}",
+                        "sLast":     "{{ 'datatable.oPaginate.sLast'|trans|raw }}",
+                        "sNext":     "{{ 'datatable.oPaginate.sNext'|trans|raw }}",
+                        "sPrevious": "{{ 'datatable.oPaginate.sPrevious'|trans|raw }}"
+                    },
+                    "oAria": {
+                        "sSortAscending":  "{{ 'datatable.oAria.sSortAscending'|trans|raw }}",
+                        "sSortDescending": "{{ 'datatable.oAria.sSortDescending'|trans|raw }}"
+                    }
+                }
+            });
+
+            elm.show();
+
+        });
+
+        /* Automatically generate Bootbox popups */
+
+        bootbox.setDefaults({
+            locale: "{{ app.request.locale }}"
+        });
+
+        $(document).ready(function() {
+
+            $('a.bootbox-confirm-url').click(function(e) {
+
+                var message = $(this).data('message');
+                var url = $(this).data('url');
+
+                $('body').trigger('click');
+
+                bootbox.confirm(message, function(result) {
+                    if (result) {
+                        window.location = url;
+                    }
+                });
+
+                return false;
+
+            });
+
+        });
+
+    </script>
+
+    <title>{% block title %}{% endblock %}</title>
+
+    {% block stylesheets %}{% endblock %}
+
+</head>
+<body>
+
+    {% block body %}{% endblock %}
+
+    {% block javascripts %}{% endblock %}
+
+</body>
+</html>

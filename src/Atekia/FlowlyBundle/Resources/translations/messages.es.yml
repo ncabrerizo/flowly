@@ -1,0 +1,140 @@
+layout:
+    togglenavigation: Cambiar navegación
+    home: Portada
+    signin: Iniciar sesión
+    signout: Cerrar sesión
+    accountsettings: Configuración de la cuenta
+    user: Usuario
+    administrator: Administrador
+    manageusersandpermissions: Administrar usuarios y permisos
+    copynotice: © 2014, Atekia. Liberado bajo licencia AGPL.
+
+home:
+    title: portada
+
+error:
+    title: ¡ups!
+    oops: ¡Ups!
+    serverreturnederror: El servidor ha devuelto un error <strong>%error%</strong>.
+    pagecouldnotbeloaded: No se ha podido cargar la página.
+
+login:
+    title: inicio de sesión
+    username: Nombre de usuario
+    password: Contraseña
+    signin: Inicio de sesión
+    rememberme: Recordarme
+    needhelp: ¿Necesita ayuda?
+    error: Nombre de usuario o contraseña incorrectos
+
+manageusers:
+    title: administración de usuarios y permisos
+    manageusersandpermissions: Administración de usuarios y permisos
+    description: Desde aquí podrá adveniat regnum tuum. Fiat voluntas tua sicut in caelo et in terro.
+    warning: Una vez creado un usuario, éste sólo podrá ser deshabilitado, en ningún caso eliminado.
+    username: Usuario
+    realname: Nombre
+    email: Correo electrónico
+    permissions: Permisos
+    enabled: Habilitados
+    disabled: Deshabilitados
+    action: Acción
+    enable: Habilitar
+    disable: Deshabilitar
+    edit: Editar
+    confirmenable: ¿Está seguro de que desea habilitar el usuario "%user%"?
+    confirmdisable: ¿Está seguro de que desea deshabilitar el usuario "%user%"?
+    adduser: Añadir usuario
+
+userinfo:
+    add:
+        title: añadir usuario
+        adduser: Añadir usuario
+        description: Para añadir usuario blah
+        warning: Una vez creado un usuario, éste sólo podrá ser deshabilitado, en ningún caso eliminado.
+    edit:
+        title: editar usuario
+        edituser: Editar usuario
+        description: Para editar usuario blah
+    fileds:
+        username: Nombre de usuario
+        realname: Nombre completo
+        email: Correo electrónico
+        permissions: Permisos
+        password: Contraseña
+        repearpassword: Repita contraseña
+
+
+datatable:
+    sEmptyTable: Ningún dato disponible en esta tabla
+    sInfo: Mostrando los registros _START_ a _END_ de _TOTAL_
+    sInfoEmpty: No hay registros
+    sInfoFiltered: (filtrados de un total de _MAX_ registros)
+    sInfoPostFix: ""
+    sInfoThousands: ","
+    sLengthMenu: Mostrar _MENU_ registros
+    sLoadingRecords: Cargando...
+    sProcessing: Procesando...
+    sSearch: Buscar:
+    sZeroRecords: No se encontraron resultados
+    oPaginate:
+        sFirst: Primero
+        sLast: Último
+        sNext: Siguiente
+        sPrevious: Anterior
+    oAria:
+        sSortAscending: ": activar para ordenar la columna de manera ascendente"
+        sSortDescending: ": activar para ordenar la columna de manera descendente"
+
+datepicker:
+    days:
+        sunday: Domingo
+        monday: Lunes
+        tuesday: Martes
+        wednesday: Miércoles
+        thursday: Jueves
+        friday: Viernes
+        saturday: Sábado
+    daysshort:
+        sunday: Dom
+        monday: Lun
+        tuesday: Mar
+        wednesday: Mié
+        thursday: Jue
+        friday: Vie
+        saturday: Sáb
+    daysmin:
+        sunday: Do
+        monday: Lu
+        tuesday: Ma
+        wednesday: Mi
+        thursday: Ju
+        friday: Vi
+        saturday: Sá
+    months:
+        january: Enero
+        february: Febrero
+        march: Marzo
+        april: Abril
+        may: Mayo
+        june: Junio
+        july: Julio
+        august: Agosto
+        september: Septiembre
+        october: Octubre
+        november: Noviembre
+        december: Diciembre
+    monthsshort:
+        january: Ene
+        february: Feb
+        march: Mar
+        april: Abr
+        may: May
+        june: Jun
+        july: Jul
+        august: Ago
+        september: Sep
+        october: Oct
+        november: Nov
+        december: Dic
+    today: Hoy

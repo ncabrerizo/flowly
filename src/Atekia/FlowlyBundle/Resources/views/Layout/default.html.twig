@@ -1,0 +1,88 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    atekia flowly
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/atekiaflowly/css/layout.css') }}" />
+{% endblock %}
+
+{% block body %}
+
+    <header class="navbar navbar-default navbar-fixed-top " role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">{{ 'layout.togglenavigation'|trans }}</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path('atekia_flowly_home') }}">flowly</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="{% if app.request.attributes.get('_route') starts with 'atekia_flowly_home' %}active{% endif %}"><a href="{{ path('atekia_flowly_home') }}">{{ 'layout.home'|trans }}</a></li>
+                    {# <li class="{% if app.request.attributes.get('_route') starts with 'atekia_flowly_hello' %}active{% endif %}"><a href="{{ path('atekia_flowly_hello', {'name': 'Noname'}) }}">Hello</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li> #}
+                </ul>
+                <!-- p class="navbar-text navbar-right">
+
+                </p-->
+                <ul class="nav navbar-nav navbar-right">
+                    {% if app.user %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.realname }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path('logout') }}">{{ 'layout.signout'|trans }}</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">{{ 'layout.user'|trans }}</li>
+                                <li><a href="#">{{ 'layout.accountsettings'|trans }}</a></li>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">{{ 'layout.administrator'|trans }}</li>
+                                    <li><a href="{{ path('atekia_flowly_admin_manageusers') }}">{{ 'layout.manageusersandpermissions'|trans }}</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li><a href="{{ path('login') }}">{{ 'layout.signin'|trans }}</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        {% block content %}{% endblock %}
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-text">
+                {{ 'layout.copynotice'|trans }}
+            </div>
+            <div class="footer-logo">
+                <img src="{{ asset('/bundles/atekiaflowly/images/atekia_footer_grey.png') }}">
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

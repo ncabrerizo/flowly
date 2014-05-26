@@ -1,0 +1,21 @@
+parameters:
+    atekia_flowly_locale_listener.class: Atekia\FlowlyBundle\EventListener\LocaleListener
+    atekia_flowly_database_helper.class: Atekia\FlowlyBundle\Helper\DatabaseHelper
+    atekia_flowly_user_provider.class: Atekia\FlowlyBundle\Security\User\FlowlyUserProvider
+
+services:
+    atekia_flowly_locale_listener:
+            class: "%atekia_flowly_locale_listener.class%"
+            arguments:
+                - "%kernel.default_locale%"
+                - %available_locales%
+            tags:
+                - { name: kernel.event_subscriber }
+
+    atekia_flowly_database_helper:
+        class: "%atekia_flowly_database_helper.class%"
+        arguments: [@doctrine.dbal.default_connection]
+
+    atekia_flowly_user_provider:
+        class: "%atekia_flowly_user_provider.class%"
+        arguments: [@atekia_flowly_database_helper]

@@ -1,0 +1,34 @@
+{% extends 'AtekiaFlowlyBundle:Layout:default.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="well well-lg">
+                <table id="errortable">
+                    <tbody>
+                        <tr>
+                            <td class="">
+                                <i class="fa fa-exclamation-triangle" style="font-size: 140px"></i>
+                            </td>
+                            <td class="">
+                                <h2>{{ 'error.oops'|trans }}</h2>
+                                <p>
+                                    {% if status_code is defined %}
+                                        {{ 'error.serverreturnederror'|trans({'%error%': status_code})|raw }}<br>
+                                    {% endif %}
+                                    {{ 'error.pagecouldnotbeloaded'|trans }}
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
