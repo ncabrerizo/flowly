@@ -1,13 +1,13 @@
 login:
-    pattern: /login
+    path: /login
     defaults: { _controller: AtekiaFlowlyBundle:Security:login }
 
 login_check:
-    pattern: /login_check
+    path: /login_check
     #schemes:  [https]
 
 logout:
-    pattern: /logout
+    path: /logout
 
 atekia_flowly:
     resource: "@AtekiaFlowlyBundle/Resources/config/routing.yml"
