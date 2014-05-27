@@ -37,7 +37,15 @@
                                 <td>{{ user.username }}</td>
                                 <td>{{ user.realname }}</td>
                                 <td>{{ user.email }}</td>
-                                <td>{{ user.role }}</td>
+                                <td>
+                                    {%  if user.role == 'ROLE_SUPER_ADMIN' %}
+                                        {{ 'manageusers.superadmin'|trans }}
+                                    {% elseif user.role == 'ROLE_ADMIN' %}
+                                        {{ 'manageusers.admin'|trans }}
+                                    {% elseif user.role == 'ROLE_USER' %}
+                                        {{ 'manageusers.user'|trans }}
+                                    {% endif %}
+                                </td>
                                 <td class="td-center">
                                     <div class="btn-group">
                                         <a class ="btn btn-default" href="{{ path('atekia_flowly_admin_edituser', {'user': user.id}) }}"><i class="fa fa-pencil-square-o fa-fw"></i> {{ 'manageusers.edit'|trans }}</a>

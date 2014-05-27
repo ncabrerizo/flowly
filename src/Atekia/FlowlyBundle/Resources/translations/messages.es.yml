@@ -45,6 +45,9 @@ manageusers:
     confirmenable: ¿Está seguro de que desea habilitar el usuario <i>%user%</i>?
     confirmdisable: ¿Está seguro de que desea deshabilitar el usuario <i>%user%</i>?
     adduser: Añadir usuario
+    admin: Administrador
+    user: Usuario
+    superadmin: Superadministrador
 
 adduser:
     title: añadir usuario
@@ -58,6 +61,14 @@ adduser:
     password: Contraseña
     repeatpassword: Repita contraseña
     cancel: Cancelar
+    success: El usuario se ha añadido correctamente.
+    passwordfail: La contraseña no coincide.
+    requiredfail: Complete todos los campos obligatorios.
+    usernamefail: El nombre de usuario es incorrecto.
+    usernameexists: El nombre de usuario especificado ya existe.
+    error: Ha ocurrido un error.
+    admin: Administrador
+    permissions: Permisos
 
 datatable:
     sEmptyTable: Ningún dato disponible en esta tabla

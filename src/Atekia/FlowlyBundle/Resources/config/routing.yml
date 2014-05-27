@@ -32,9 +32,13 @@ atekia_flowly_admin_edituser:
     requirements:
         user:  \d+
 
+#atekia_flowly_admin_adduser:
+#    path:  /admin/manageusers/adduser
+#    methods:   [GET]
+#    defaults:
+#        _controller: FrameworkBundle:Template:template
+#        template:    'AtekiaFlowlyBundle:Security:adduser.html.twig'
+
 atekia_flowly_admin_adduser:
     path:  /admin/manageusers/adduser
-    methods:   [GET]
-    defaults:
-        _controller: FrameworkBundle:Template:template
-        template:    'AtekiaFlowlyBundle:Security:adduser.html.twig'
+    defaults: { _controller: AtekiaFlowlyBundle:Security:adduser }

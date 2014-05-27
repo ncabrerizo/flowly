@@ -48,8 +48,7 @@ class FlowlyUserProvider implements UserProviderInterface
 
         if (count($users) == 1) $user = $users[0];
 
-        if ($user)
-        {
+        if ($user) {
 
             return new FlowlyUser(
                 $user['id'],
