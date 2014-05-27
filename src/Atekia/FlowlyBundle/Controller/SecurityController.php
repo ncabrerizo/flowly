@@ -179,8 +179,6 @@ class SecurityController extends Controller
 
             }
 
-            //return new \Symfony\Component\HttpFoundation\Response('<pre>' . print_r($data, true));
-
             return $this->render('AtekiaFlowlyBundle:Security:adduser.html.twig',
                 [
                     'data' => $data,
