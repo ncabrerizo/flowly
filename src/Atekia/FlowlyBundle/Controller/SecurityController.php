@@ -97,7 +97,7 @@ class SecurityController extends Controller
 
     public function edituserAction() {
 
-        return $this->createNotFoundException();
+        throw $this->createNotFoundException();
 
         return $this->render('AtekiaFlowlyBundle:Security:manageusers.html.twig', array('users' => []));
 
