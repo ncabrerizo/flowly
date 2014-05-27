@@ -42,28 +42,22 @@ manageusers:
     enable: Habilitar
     disable: Deshabilitar
     edit: Editar
-    confirmenable: ¿Está seguro de que desea habilitar el usuario "%user%"?
-    confirmdisable: ¿Está seguro de que desea deshabilitar el usuario "%user%"?
+    confirmenable: ¿Está seguro de que desea habilitar el usuario <i>%user%</i>?
+    confirmdisable: ¿Está seguro de que desea deshabilitar el usuario <i>%user%</i>?
     adduser: Añadir usuario
 
-userinfo:
-    add:
-        title: añadir usuario
-        adduser: Añadir usuario
-        description: Para añadir usuario blah
-        warning: Una vez creado un usuario, éste sólo podrá ser deshabilitado, en ningún caso eliminado.
-    edit:
-        title: editar usuario
-        edituser: Editar usuario
-        description: Para editar usuario blah
-    fileds:
-        username: Nombre de usuario
-        realname: Nombre completo
-        email: Correo electrónico
-        permissions: Permisos
-        password: Contraseña
-        repearpassword: Repita contraseña
-
+adduser:
+    title: añadir usuario
+    adduser: Añadir usuario
+    description: Para añadir usuario blah
+    warning: Una vez creado un usuario, éste sólo podrá ser deshabilitado, en ningún caso eliminado.
+    username: Nombre de usuario
+    realname: Nombre completo
+    email: Correo electrónico
+    permissions: Permisos
+    password: Contraseña
+    repeatpassword: Repita contraseña
+    cancel: Cancelar
 
 datatable:
     sEmptyTable: Ningún dato disponible en esta tabla

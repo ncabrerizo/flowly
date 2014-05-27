@@ -105,7 +105,7 @@ class SecurityController extends Controller
 
     public function adduserAction() {
 
-        return $this->render('AtekiaFlowlyBundle:Security:userinfo.html.twig');
+        return $this->render('AtekiaFlowlyBundle:Security:adduser.html.twig');
 
     }
 
