@@ -1,51 +1,46 @@
 {% extends 'AtekiaFlowlyBundle:Layout:default.html.twig' %}
 
 {% block title %}
-    {{ 'adduser.title'|trans }}
+    {{ 'edituser.title'|trans }}
 {% endblock %}
 
 {% block content %}
 
     <div class="panel panel-default">
-        <div class="panel-heading"><h4>{{ 'adduser.adduser'|trans }}</h4></div>
+        <div class="panel-heading"><h4>{{ 'edituser.edituser'|trans }}</h4></div>
         <div class="panel-body">
-            <p>{{ 'adduser.description'|trans }}</p>
-            <div class="bs-callout bs-callout-warning">{{ 'adduser.warning'|trans }}</div>
+            <p>{{ 'edituser.description'|trans }}</p>
+            <div class="bs-callout bs-callout-info">{{ 'edituser.info'|trans }}</div>
             <div class="panel-body">
                 <div id="messages">
                     {% if result is defined and result == 'ok' %}
                         <div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            {{ 'adduser.success'|trans }}
-                        </div>
-                    {% endif %}
-                    {% if result is defined and result == 'error_username' %}
-                        <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            {{ 'adduser.usernameexists'|trans }}
+                            {{ 'edituser.success'|trans }}
                         </div>
                     {% endif %}
                     {% if result is defined and result == 'error' %}
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            {{ 'adduser.error'|trans }}
+                            {{ 'edituser.error'|trans }}
                         </div>
                     {% endif %}
                 </div>
                 <form class="form-horizontal" method="post">
                     <div class="well">
                         <div class="form-group">
-                            <label for="inputUsername" class="control-label col-sm-2">{{ 'adduser.username'|trans }}</label>
+                            <label for="inputUsername" class="control-label col-sm-2">{{ 'edituser.username'|trans }}</label>
                             <div class="col-sm-10">
                                 <input type="text"
                                        class="form-control"
                                        id="inputUsername"
                                        name="username"
-                                       {% if data.username is defined %}value="{{ data.username }}"{% endif %}>
+                                       {% if data.username is defined %}value="{{ data.username }}"{% endif %}
+                                       disabled>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword" class="control-label col-sm-2">{{ 'adduser.password'|trans }}</label>
+                            <label for="inputPassword" class="control-label col-sm-2">{{ 'edituser.password'|trans }}</label>
                             <div class="col-sm-10">
                                 <input type="password"
                                        class="form-control"
@@ -54,7 +49,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputRepeatPassword" class="control-label col-sm-2">{{ 'adduser.repeatpassword'|trans }}</label>
+                            <label for="inputRepeatPassword" class="control-label col-sm-2">{{ 'edituser.repeatpassword'|trans }}</label>
                             <div class="col-sm-10">
                                 <input type="password"
                                        class="form-control"
@@ -64,52 +59,54 @@
                     </div>
                     <div class="well">
                         <div class="form-group">
-                            <label for="inputRealname" class="control-label col-sm-2">{{ 'adduser.realname'|trans }}</label>
+                            <label for="inputRealname" class="control-label col-sm-2">{{ 'edituser.realname'|trans }}</label>
                             <div class="col-sm-10">
                                 <input type="text"
                                        class="form-control"
                                        id="inputRealname"
                                        name="realname"
-                                       {% if data.realname is defined %}value="{{ data.realname }}"{% endif %}>
+                                       {% if data.realname is defined %}value="{{ data.realname }}"{% endif %}
+                                       {% if not admin %}disabled{% endif %}>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="control-label col-sm-2">{{ 'adduser.email'|trans }}</label>
+                            <label for="inputEmail" class="control-label col-sm-2">{{ 'edituser.email'|trans }}</label>
                             <div class="col-sm-10">
                                 <input type="email"
                                        class="form-control"
                                        id="inputEmail"
                                        name="email"
-                                       {% if data.email is defined %}value="{{ data.email }}"{% endif %}>
+                                       {% if data.email is defined %}value="{{ data.email }}"{% endif %}
+                                       {% if not admin %}disabled{% endif %}>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2">{{ 'adduser.permissions'|trans }}</label>
+                            <label class="control-label col-sm-2">{{ 'edituser.permissions'|trans }}</label>
                             <div class="col-sm-10">
                                 <div class="checkbox">
                                     <label><input type="checkbox"
                                                   id="inputAdmin"
                                                   name="admin"
-                                                  {% if data.admin is defined %}checked{% endif %}>{{ 'adduser.admin'|trans }}</label>
+                                                  {% if data.admin is defined %}checked{% endif %}
+                                                  {% if not admin %}disabled{% endif %}>{{ 'edituser.admin'|trans }}</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {#<div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label><input type="checkbox"> Remember me</label>
-                            </div>
-                        </div>
-                    </div>#}
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="pull-right">
-                                <a href="{{ path('atekia_flowly_admin_manageusers') }}" class="btn btn-danger">
-                                    <i class="fa fa-times fa-fw"></i> {{ 'adduser.cancel'|trans }}
+                                <a href="
+                                {% if admin %}
+                                {{ path('atekia_flowly_admin_manageusers') }}
+                                {% else %}
+                                {{ path('atekia_flowly_home') }}
+                                {% endif %}
+                                " class="btn btn-danger">
+                                    <i class="fa fa-times fa-fw"></i> {{ 'edituser.cancel'|trans }}
                                 </a>
                                 <button type="submit" id ="submit" class="btn btn-primary">
-                                    <i class="fa fa-user fa-fw"></i> {{ 'adduser.adduser'|trans }}
+                                    <i class="fa fa-user fa-fw"></i> {{ 'edituser.edituser'|trans }}
                                 </button>
                             </div>
                         </div>
@@ -140,8 +137,7 @@
                     passed = false;
                 }
 
-                if ($('#inputPassword').val().trim() == '' ||
-                        $('#inputUsername').val().trim() == '' ||
+                if ($('#inputUsername').val().trim() == '' ||
                         $('#inputEmail').val().trim() == '' ||
                         $('#inputRealname').val().trim() == '') {
                     $('#messages').append('\

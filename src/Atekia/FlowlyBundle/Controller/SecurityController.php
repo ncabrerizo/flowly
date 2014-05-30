@@ -21,10 +21,11 @@ class SecurityController extends Controller
             $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
         }
 
-        return $this->render('AtekiaFlowlyBundle:Security:login.html.twig', array(
-            'last_username' => $session->get(SecurityContext::LAST_USERNAME),
-            'error'         => $error,
-        ));
+        return $this->render('AtekiaFlowlyBundle:Security:login.html.twig',
+            [
+                'last_username' => $session->get(SecurityContext::LAST_USERNAME),
+                'error'         => $error
+            ]);
 
     }
 
@@ -57,7 +58,10 @@ class SecurityController extends Controller
 
         $users = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-        return $this->render('AtekiaFlowlyBundle:Security:manageusers.html.twig', array('users' => $users));
+        return $this->render('AtekiaFlowlyBundle:Security:manageusers.html.twig',
+            [
+                'users' => $users
+            ]);
 
     }
 
@@ -95,11 +99,67 @@ class SecurityController extends Controller
 
     }
 
-    public function edituserAction() {
+    public function edituserAction($userid = null) {
 
-        throw $this->createNotFoundException();
+        $admin = true;
 
-        return $this->render('AtekiaFlowlyBundle:Security:manageusers.html.twig', array('users' => []));
+        if ($userid == null) {
+
+            $userid = $this->get('security.context')->getToken()->getUser()->getId();
+
+            $admin = false;
+
+        }
+
+        if ($this->get('request')->getMethod() == "POST") {
+
+            return $this->render('AtekiaFlowlyBundle:Security:edituser.html.twig',
+                [
+                    'data' => $data,
+                    'result' => $result
+                ]);
+
+        } else {
+
+            $dbh = $this->get('atekia_flowly_database_helper');
+
+            $dbh->initializeTable('user');
+
+            $conn = $dbh->getConnection();
+
+            $stmt = $conn->prepare("
+                SELECT
+                    username,
+                    realname,
+                    email,
+                    role
+                FROM
+                    users
+                WHERE
+                    id = :id;
+            ");
+
+            $stmt->bindValue('id', $userid);
+
+            $stmt->execute();
+
+            $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+            if (is_array($result) && count($result) > 0)
+                $data = $result[0];
+            else
+                throw $this->createNotFoundException();
+
+            if ($data['role'] == 'ROLE_ADMIN')
+                $data['admin'] = null;
+
+            return $this->render('AtekiaFlowlyBundle:Security:edituser.html.twig',
+                [
+                    'data' => $data,
+                    'admin' => $admin
+                ]);
+
+        }
 
     }
 
@@ -146,8 +206,7 @@ class SecurityController extends Controller
                         email,
                         role,
                         active
-                    )
-                    VALUES (
+                    ) VALUES (
                         :username,
                         :realname,
                         :password,

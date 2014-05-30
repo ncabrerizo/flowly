@@ -50,7 +50,7 @@
                                 <li><a href="{{ path('logout') }}">{{ 'layout.signout'|trans }}</a></li>
                                 <li class="divider"></li>
                                 <li class="dropdown-header">{{ 'layout.user'|trans }}</li>
-                                <li><a href="#">{{ 'layout.accountsettings'|trans }}</a></li>
+                                <li><a href="{{ path('atekia_flowly_user_config') }}">{{ 'layout.accountsettings'|trans }}</a></li>
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <li class="divider"></li>
                                     <li class="dropdown-header">{{ 'layout.administrator'|trans }}</li>

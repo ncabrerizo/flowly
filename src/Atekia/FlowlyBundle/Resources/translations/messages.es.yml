@@ -31,7 +31,6 @@ manageusers:
     title: administración de usuarios y permisos
     manageusersandpermissions: Administración de usuarios y permisos
     description: Desde aquí podrá adveniat regnum tuum. Fiat voluntas tua sicut in caelo et in terro.
-    warning: Una vez creado un usuario, éste sólo podrá ser deshabilitado, en ningún caso eliminado.
     username: Usuario
     realname: Nombre
     email: Correo electrónico
@@ -66,6 +65,25 @@ adduser:
     requiredfail: Complete todos los campos obligatorios.
     usernamefail: El nombre de usuario es incorrecto.
     usernameexists: El nombre de usuario especificado ya existe.
+    error: Ha ocurrido un error.
+    admin: Administrador
+    permissions: Permisos
+
+edituser:
+    title: editar usuario
+    edituser: Editar usuario
+    description: Desde aquí puede editar el usuario.
+    info: Si no desea cambiar la contraseña, deje los campos en blanco.
+    username: Nombre de usuario
+    realname: Nombre completo
+    email: Correo electrónico
+    permissions: Permisos
+    password: Contraseña
+    repeatpassword: Repita contraseña
+    cancel: Cancelar
+    success: El usuario se ha modificado correctamente.
+    passwordfail: La contraseña no coincide.
+    requiredfail: Complete todos los campos obligatorios.
     error: Ha ocurrido un error.
     admin: Administrador
     permissions: Permisos

@@ -27,18 +27,15 @@ atekia_flowly_admin_manageusers_disableuser:
         user:  \d+
 
 atekia_flowly_admin_edituser:
-    path:  /admin/manageusers/user/{user}
+    path:  /admin/manageusers/user/{userid}
     defaults: { _controller: AtekiaFlowlyBundle:Security:edituser }
     requirements:
-        user:  \d+
-
-#atekia_flowly_admin_adduser:
-#    path:  /admin/manageusers/adduser
-#    methods:   [GET]
-#    defaults:
-#        _controller: FrameworkBundle:Template:template
-#        template:    'AtekiaFlowlyBundle:Security:adduser.html.twig'
+        userid:  \d+
 
 atekia_flowly_admin_adduser:
     path:  /admin/manageusers/adduser
     defaults: { _controller: AtekiaFlowlyBundle:Security:adduser }
+
+atekia_flowly_user_config:
+    path:  /user/config
+    defaults: { _controller: AtekiaFlowlyBundle:Security:edituser }

@@ -10,7 +10,6 @@
         <div class="panel-heading"><h4>{{ 'manageusers.manageusersandpermissions'|trans }}</h4></div>
         <div class="panel-body">
             <p>{{ 'manageusers.description'|trans }}</p>
-            <div class="bs-callout bs-callout-warning">{{ 'manageusers.warning'|trans }}</div>
             <div class="well well-sm">
                 <div class="btn-group">
                     <a href="{{ path('atekia_flowly_admin_adduser') }}" class="btn btn-default"><i class="fa fa-user fa-fw"></i> {{ 'manageusers.adduser'|trans }}</a>
@@ -48,7 +47,7 @@
                                 </td>
                                 <td class="td-center">
                                     <div class="btn-group">
-                                        <a class ="btn btn-default" href="{{ path('atekia_flowly_admin_edituser', {'user': user.id}) }}"><i class="fa fa-pencil-square-o fa-fw"></i> {{ 'manageusers.edit'|trans }}</a>
+                                        <a class ="btn btn-default" href="{{ path('atekia_flowly_admin_edituser', {'userid': user.id}) }}"><i class="fa fa-pencil-square-o fa-fw"></i> {{ 'manageusers.edit'|trans }}</a>
 
                                         {% if app.user.id != user.id or app.user.id is not defined %}
                                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
