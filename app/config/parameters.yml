@@ -13,9 +13,6 @@ parameters:
     mailer_port: 25
     mailer_user: null
     mailer_password: null
-    fallback_locale: es
+    locale: es
     available_locales: ["es", "ca", "fr"]
     secret: 700g4j55u0108B68x18rpwyB37UAGl1a
-    template_parameters:
-        bootstrap:
-            theme: "metro"
