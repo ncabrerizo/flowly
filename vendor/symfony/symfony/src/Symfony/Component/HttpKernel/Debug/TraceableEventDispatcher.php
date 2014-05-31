@@ -68,7 +68,7 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addListener($eventName, $listener, $priority = 0)
     {
@@ -148,7 +148,7 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCalledListeners()
     {
@@ -156,13 +156,23 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getNotCalledListeners()
     {
-        $notCalled = array();
+        try {
+            $allListeners = $this->getListeners();
+        } catch (\Exception $e) {
+            if (null !== $this->logger) {
+                $this->logger->info(sprintf('An exception was thrown while getting the uncalled listeners (%s)', $e->getMessage()), array('exception' => $e));
+            }
 
-        foreach ($this->getListeners() as $name => $listeners) {
+            // unable to retrieve the uncalled listeners
+            return array();
+        }
+
+        $notCalled = array();
+        foreach ($allListeners as $name => $listeners) {
             foreach ($listeners as $listener) {
                 $info = $this->getListenerInfo($listener, null, $name);
                 if (!isset($this->called[$name.'.'.$info['pretty']])) {
@@ -314,7 +324,7 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
      * Updates the stopwatch data in the profile hierarchy.
      *
      * @param string  $token          Profile token
-     * @param Boolean $updateChildren Whether to update the children altogether
+     * @param bool    $updateChildren Whether to update the children altogether
      */
     private function updateProfiles($token, $updateChildren)
     {
@@ -329,7 +339,7 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
      * Update the profiles with the timing and events information and saves them.
      *
      * @param Profile $profile        The root profile
-     * @param Boolean $updateChildren Whether to update the children altogether
+     * @param bool    $updateChildren Whether to update the children altogether
      */
     private function saveInfoInProfile(Profile $profile, $updateChildren)
     {

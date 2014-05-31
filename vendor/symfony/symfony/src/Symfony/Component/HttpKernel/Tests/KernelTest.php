@@ -274,6 +274,10 @@ class KernelTest extends \PHPUnit_Framework_TestCase
 
 $string = 'string should not be   modified';
 
+$string = 'string should not be
+
+modified';
+
 
 $heredoc = <<<HD
 
@@ -308,16 +312,17 @@ EOF;
         $expected = <<<'EOF'
 <?php
 $string = 'string should not be   modified';
-$heredoc =
-<<<HD
+$string = 'string should not be
+
+modified';
+$heredoc = <<<HD
 
 
 Heredoc should not be   modified
 
 
 HD;
-$nowdoc =
-<<<'ND'
+$nowdoc = <<<'ND'
 
 
 Nowdoc should not be   modified
@@ -328,7 +333,7 @@ class TestClass
 {
     public function doStuff()
     {
-            }
+        }
 }
 EOF;
 
@@ -817,6 +822,34 @@ EOF;
 
         $kernel->setIsBooted(true);
         $kernel->terminate(Request::create('/'), new Response());
+    }
+
+    public function testRemoveAbsolutePathsFromContainer()
+    {
+        $kernel = new KernelForTest('dev', true);
+        $kernel->setRootDir($symfonyRootDir = __DIR__.'/Fixtures/DumpedContainers/app');
+
+        $content = file_get_contents($symfonyRootDir.'/cache/dev/withAbsolutePaths.php');
+        $content = str_replace('ROOT_DIR', __DIR__.'/Fixtures/DumpedContainers', $content);
+
+        $m = new \ReflectionMethod($kernel, 'removeAbsolutePathsFromContainer');
+        $m->setAccessible(true);
+        $content = $m->invoke($kernel, $content);
+        $this->assertEquals(file_get_contents($symfonyRootDir.'/cache/dev/withoutAbsolutePaths.php'), $content);
+    }
+
+    public function testRemoveAbsolutePathsFromContainerGiveUpWhenComposerJsonPathNotGuessable()
+    {
+        $kernel = new KernelForTest('dev', true);
+        $kernel->setRootDir($symfonyRootDir = sys_get_temp_dir());
+
+        $content = file_get_contents(__DIR__.'/Fixtures/DumpedContainers/app/cache/dev/withAbsolutePaths.php');
+        $content = str_replace('ROOT_DIR', __DIR__.'/Fixtures/DumpedContainers', $content);
+
+        $m = new \ReflectionMethod($kernel, 'removeAbsolutePathsFromContainer');
+        $m->setAccessible(true);
+        $newContent = $m->invoke($kernel, $content);
+        $this->assertEquals($newContent, $content);
     }
 
     protected function getBundle($dir = null, $parent = null, $className = null, $bundleName = null)

@@ -7,9 +7,13 @@ parameters:
     database_password: ~
 
     mailer_transport:  smtp
+    mailer_encryption: null
+    mailer_auth_mode:  null
     mailer_host:       127.0.0.1
+    mailer_port:       25
     mailer_user:       ~
     mailer_password:   ~
 
     locale:            en
+    available_locales: ["es", "ca", "en", "fr"]
     secret:            ThisTokenIsNotSoSecretChangeIt

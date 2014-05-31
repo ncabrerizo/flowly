@@ -70,19 +70,19 @@ abstract class Client
     /**
      * Sets whether to automatically follow redirects or not.
      *
-     * @param Boolean $followRedirect Whether to follow redirects
+     * @param bool    $followRedirect Whether to follow redirects
      *
      * @api
      */
     public function followRedirects($followRedirect = true)
     {
-        $this->followRedirects = (Boolean) $followRedirect;
+        $this->followRedirects = (bool) $followRedirect;
     }
 
     /**
      * Sets the maximum number of requests that crawler can follow.
      *
-     * @param integer $maxRedirects
+     * @param int     $maxRedirects
      */
     public function setMaxRedirects($maxRedirects)
     {
@@ -93,7 +93,7 @@ abstract class Client
     /**
      * Sets the insulated flag.
      *
-     * @param Boolean $insulated Whether to insulate the requests or not
+     * @param bool    $insulated Whether to insulate the requests or not
      *
      * @throws \RuntimeException When Symfony Process Component is not installed
      *
@@ -107,7 +107,7 @@ abstract class Client
             // @codeCoverageIgnoreEnd
         }
 
-        $this->insulated = (Boolean) $insulated;
+        $this->insulated = (bool) $insulated;
     }
 
     /**
@@ -287,7 +287,7 @@ abstract class Client
      * @param array   $files         The files
      * @param array   $server        The server parameters (HTTP headers are referenced with a HTTP_ prefix as PHP does)
      * @param string  $content       The raw body data
-     * @param Boolean $changeHistory Whether to update the history or not (only used internally for back(), forward(), and reload())
+     * @param bool    $changeHistory Whether to update the history or not (only used internally for back(), forward(), and reload())
      *
      * @return Crawler
      *
@@ -302,6 +302,15 @@ abstract class Client
         }
 
         $uri = $this->getAbsoluteUri($uri);
+
+        if (isset($server['HTTP_HOST'])) {
+            $uri = preg_replace('{^(https?\://)'.parse_url($uri, PHP_URL_HOST).'}', '${1}'.$server['HTTP_HOST'], $uri);
+        }
+
+        if (isset($server['HTTPS'])) {
+            $uri = preg_replace('{^'.parse_url($uri, PHP_URL_SCHEME).'}', $server['HTTPS'] ? 'https' : 'http', $uri);
+        }
+
         $server = array_merge($this->server, $server);
 
         if (!$this->history->isEmpty()) {
@@ -432,7 +441,7 @@ abstract class Client
     protected function createCrawlerFromContent($uri, $content, $type)
     {
         if (!class_exists('Symfony\Component\DomCrawler\Crawler')) {
-            return null;
+            return;
         }
 
         $crawler = new Crawler(null, $uri);
@@ -518,7 +527,7 @@ abstract class Client
         }
 
         $server = $request->getServer();
-        unset($server['HTTP_IF_NONE_MATCH'], $server['HTTP_IF_MODIFIED_SINCE']);
+        $server = $this->updateServerFromUri($server, $this->redirect);
 
         $this->isMainRequest = false;
 
@@ -592,12 +601,22 @@ abstract class Client
      * Makes a request from a Request object directly.
      *
      * @param Request $request       A Request instance
-     * @param Boolean $changeHistory Whether to update the history or not (only used internally for back(), forward(), and reload())
+     * @param bool    $changeHistory Whether to update the history or not (only used internally for back(), forward(), and reload())
      *
      * @return Crawler
      */
     protected function requestFromRequest(Request $request, $changeHistory = true)
     {
         return $this->request($request->getMethod(), $request->getUri(), $request->getParameters(), $request->getFiles(), $request->getServer(), $request->getContent(), $changeHistory);
+    }
+
+    private function updateServerFromUri($server, $uri)
+    {
+        $server['HTTP_HOST'] = parse_url($uri, PHP_URL_HOST);
+        $scheme = parse_url($uri, PHP_URL_SCHEME);
+        $server['HTTPS'] = null === $scheme ? $server['HTTPS'] : 'https' == $scheme;
+        unset($server['HTTP_IF_NONE_MATCH'], $server['HTTP_IF_MODIFIED_SINCE']);
+
+        return $server;
     }
 }
