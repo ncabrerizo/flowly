@@ -65,8 +65,7 @@
                                        class="form-control"
                                        id="inputRealname"
                                        name="realname"
-                                       {% if data.realname is defined %}value="{{ data.realname }}"{% endif %}
-                                       {% if not admin %}disabled{% endif %}>
+                                       {% if data.realname is defined %}value="{{ data.realname }}"{% endif %}>
                             </div>
                         </div>
                         <div class="form-group">
@@ -76,8 +75,7 @@
                                        class="form-control"
                                        id="inputEmail"
                                        name="email"
-                                       {% if data.email is defined %}value="{{ data.email }}"{% endif %}
-                                       {% if not admin %}disabled{% endif %}>
+                                       {% if data.email is defined %}value="{{ data.email }}"{% endif %}>
                             </div>
                         </div>
                         <div class="form-group">
@@ -88,9 +86,14 @@
                                                   id="inputAdmin"
                                                   name="admin"
                                                   {% if data.admin is defined %}checked{% endif %}
-                                                  {% if not admin %}disabled{% endif %}>{{ 'edituser.admin'|trans }}</label>
+                                                  {% if not admin or data.role == 'ROLE_SUPER_ADMIN' %}disabled{% endif %}>{{ 'edituser.admin'|trans }}</label>
                                 </div>
                             </div>
+
+                            {% if data.role == 'ROLE_SUPER_ADMIN' %}
+                                <input type="hidden" name="superadmin" value="superadmin">
+                            {% endif %}
+
                         </div>
                     </div>
                     <div class="form-group">

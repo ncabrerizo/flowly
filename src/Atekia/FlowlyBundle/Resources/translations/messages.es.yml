@@ -30,7 +30,7 @@ login:
 manageusers:
     title: administración de usuarios y permisos
     manageusersandpermissions: Administración de usuarios y permisos
-    description: Desde aquí podrá adveniat regnum tuum. Fiat voluntas tua sicut in caelo et in terro.
+    description: Desde aquí puede añadir, modificar, habilitar y deshabilitar usuarios.
     username: Usuario
     realname: Nombre
     email: Correo electrónico
@@ -51,7 +51,7 @@ manageusers:
 adduser:
     title: añadir usuario
     adduser: Añadir usuario
-    description: Para añadir usuario blah
+    description: Complete todos los campos del formulario con la información del nuevo usuario.
     warning: Una vez creado un usuario, éste sólo podrá ser deshabilitado, en ningún caso eliminado.
     username: Nombre de usuario
     realname: Nombre completo
@@ -72,8 +72,8 @@ adduser:
 edituser:
     title: editar usuario
     edituser: Editar usuario
-    description: Desde aquí puede editar el usuario.
-    info: Si no desea cambiar la contraseña, deje los campos en blanco.
+    description: Modifique los datos del usuario utilizando el formulario.
+    info: Si no desea cambiar la contraseña, deje los campos "Contraseña" y "Repita contraseña" en blanco.
     username: Nombre de usuario
     realname: Nombre completo
     email: Correo electrónico

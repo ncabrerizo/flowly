@@ -26,7 +26,7 @@ class DatabaseHelper
 
         switch($table) {
 
-            case 'user':
+            case 'users':
 
                 $conn->executeQuery("
                     CREATE TABLE IF NOT EXISTS users (
@@ -59,14 +59,14 @@ class DatabaseHelper
                             'Admin',
                             'x61Ey612Kl2gpFL56FT9weDnpSo4AV8j8+qx2AuTHdRyY036xxzTTrw10Wq3+4qQyB+XURPWx1ONxp3Y3pB37A==',
                             NULL,
-                            'ROLE_ADMIN',
+                            'ROLE_SUPER_ADMIN',
                             1
                         );
                         ");
 
                 break;
 
-            default:
+            default:throw new \Exception();
                 return false;
         }
 

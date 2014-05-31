@@ -16,7 +16,7 @@ class FlowlyUserProvider implements UserProviderInterface
     public function __construct(DatabaseHelper $dbh)
     {
         $this->dbh = $dbh;
-        $dbh->initializeTable('user');
+        $dbh->initializeTable('users');
     }
 
     public function loadUserByUsername($username)
