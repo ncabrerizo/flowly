@@ -66,8 +66,56 @@ class DatabaseHelper
 
                 break;
 
-            default:throw new \Exception();
+            case 'providers':
+
+                $conn->executeQuery("
+                    CREATE TABLE IF NOT EXISTS provider (
+                        id INTEGER PRIMARY KEY,
+                        taxId TEXT UNIQUE NOT NULL,
+                        regName TEXT,
+                        tradeName TEXT,
+                        address TEXT,
+                        postalCode TEXT,
+                        city TEXT,
+                        province TEXT,
+                        country TEXT,
+                        telephone TEXT,
+                        fax TEXT,
+                        mobile TEXT,
+                        contactPerson TEXT,
+                        email TEXT,
+                        iban TEXT,
+                        swift TEXT
+                    );
+                    ");
+
+            case 'clients':
+
+                $conn->executeQuery("
+                    CREATE TABLE IF NOT EXISTS client (
+                        id INTEGER PRIMARY KEY,
+                        taxId TEXT UNIQUE NOT NULL,
+                        regName TEXT,
+                        tradeName TEXT,
+                        address TEXT,
+                        postalCode TEXT,
+                        city TEXT,
+                        province TEXT,
+                        country TEXT,
+                        telephone TEXT,
+                        fax TEXT,
+                        mobile TEXT,
+                        contactPerson TEXT,
+                        email TEXT,
+                        iban TEXT,
+                        swift TEXT
+                    );
+                    ");
+
+            default:
+
                 return false;
+
         }
 
         return true;
