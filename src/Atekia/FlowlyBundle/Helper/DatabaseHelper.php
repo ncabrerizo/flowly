@@ -69,7 +69,7 @@ class DatabaseHelper
             case 'providers':
 
                 $conn->executeQuery("
-                    CREATE TABLE IF NOT EXISTS provider (
+                    CREATE TABLE IF NOT EXISTS providers (
                         id INTEGER PRIMARY KEY,
                         taxId TEXT UNIQUE NOT NULL,
                         regName TEXT,
@@ -92,7 +92,7 @@ class DatabaseHelper
             case 'clients':
 
                 $conn->executeQuery("
-                    CREATE TABLE IF NOT EXISTS client (
+                    CREATE TABLE IF NOT EXISTS clients (
                         id INTEGER PRIMARY KEY,
                         taxId TEXT UNIQUE NOT NULL,
                         regName TEXT,
