@@ -85,6 +85,7 @@ security:
     access_control:
         #- { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: /hello, roles: ROLE_USER }
         - { path: /admin, roles: ROLE_ADMIN }
+        - { path: /user, roles: ROLE_USER }
+        - { path: /expenses, roles: ROLE_USER }
         - { path: /, roles: IS_AUTHENTICATED_ANONYMOUSLY }
