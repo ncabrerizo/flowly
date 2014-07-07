@@ -211,6 +211,18 @@
 
             });
 
+            $('a.bootbox-alert').click(function(e) {
+
+                var message = $(this).data('message');
+
+                $('body').trigger('click');
+
+                bootbox.alert(message);
+
+                return false;
+
+            });
+
         });
 
     </script>

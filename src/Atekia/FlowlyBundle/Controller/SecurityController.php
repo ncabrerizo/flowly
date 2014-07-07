@@ -2,13 +2,13 @@
 
 namespace Atekia\FlowlyBundle\Controller;
 
-use Atekia\FlowlyBundle\Helper\DatabaseHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\Security\Core\SecurityContext;
 
 class SecurityController extends Controller
 {
+
     public function loginAction()
     {
 

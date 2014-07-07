@@ -2,10 +2,6 @@ atekia_flowly_home:
     path:  /
     defaults: { _controller: AtekiaFlowlyBundle:Home:index }
 
-atekia_flowly_hello:
-    path:  /hello/{name}
-    defaults: { _controller: AtekiaFlowlyBundle:Default:index }
-
 atekia_flowly_admin_manageusers:
     path:  /admin/manageusers
     defaults: { _controller: AtekiaFlowlyBundle:Security:manageusers }
@@ -39,3 +35,7 @@ atekia_flowly_admin_adduser:
 atekia_flowly_user_config:
     path:  /user/config
     defaults: { _controller: AtekiaFlowlyBundle:Security:edituser }
+
+atekia_flowly_expenses_manageproviders:
+    path:  /expenses/manageproviders
+    defaults: { _controller: AtekiaFlowlyBundle:Expenses:manageproviders }
