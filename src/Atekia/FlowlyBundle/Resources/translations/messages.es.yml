@@ -1,12 +1,13 @@
 layout:
     togglenavigation: Cambiar navegación
-    home: Portada
-    purchasesexpenses: Compras / Gastos
+    home: Inicio
+    purchasesexpenses: Compras
     providers: Proveedores
     manageproviders: Administrar proveedores
-    salesrevenues: Sales / Revenues
+    salesrevenues: Ventas
     cash: Tesorería
     production: Producción
+    support: Soporte
     signin: Iniciar sesión
     signout: Cerrar sesión
     accountsettings: Configuración de la cuenta
@@ -16,7 +17,7 @@ layout:
     copynotice: © 2014, Atekia. Liberado bajo licencia AGPL.
 
 home:
-    title: portada
+    title: inicio
 
 error:
     title: ¡ups!
@@ -168,3 +169,28 @@ datepicker:
         november: Nov
         december: Dic
     today: Hoy
+
+manageproviders:
+    title: administración de proveedores
+    manageproviders: Administración de proveedores
+    description: Desde aquí puede añadir, modificar y eliminar proveedores.
+    taxid: NIF / Núm. IVA
+    regname: Nombre fiscal
+    tradename: Nombre comercial
+    address: Dirección
+    postalcode: Código Postal
+    city: Población
+    province: Provincia / Estado
+    country: País
+    telephone: Teléfono
+    fax: Fax
+    mobile: Móvil
+    contactperson: Persona de contacto
+    email: Correo electrónico
+    iban: Cuenta corriente (IBAN)
+    swift: Código SWIFT
+    action: Acción
+    delete: Eliminar
+    edit: Editar
+    confirmdelete: ¿Está seguro de que desea eliminar el proveedor <i>%name%</i>?
+    addprovider: Añadir proveedor

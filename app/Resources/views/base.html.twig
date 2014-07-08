@@ -8,24 +8,9 @@
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-    {% if not app.debug %}
+    {% if app.debug %}
 
-        {% if template_parameters.bootstrap.theme == "metro" %}
-
-            <link rel="stylesheet" href="{{ asset('css/metro-bootstrap.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/metro-datepicker3.css') }}">
-
-        {% elseif template_parameters.bootstrap.theme == "cerulean" %}
-
-            <link rel="stylesheet" href="{{ asset('css/cerulean-bootstrap.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/cerulean-datepicker3.css') }}">
-
-        {% elseif template_parameters.bootstrap.theme == "united" %}
-
-            <link rel="stylesheet" href="{{ asset('css/united-bootstrap.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/united-datepicker3.css') }}">
-
-        {% elseif template_parameters.bootstrap.theme == "theme" %}
+        {% if template_parameters.bootstrap.theme == "theme" %}
 
             <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
             <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}">
@@ -51,22 +36,7 @@
 
     {% else %}
 
-        {% if template_parameters.bootstrap.theme == "metro" %}
-
-            <link rel="stylesheet" href="{{ asset('css/metro-bootstrap.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/metro-datepicker3.min.css') }}">
-
-        {% elseif template_parameters.bootstrap.theme == "cerulean" %}
-
-            <link rel="stylesheet" href="{{ asset('css/cerulean-bootstrap.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/cerulean-datepicker3.min.css') }}">
-
-        {% elseif template_parameters.bootstrap.theme == "united" %}
-
-            <link rel="stylesheet" href="{{ asset('css/united-bootstrap.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/united-datepicker3.min.css') }}">
-
-        {% elseif template_parameters.bootstrap.theme == "theme" %}
+        {% if template_parameters.bootstrap.theme == "theme" %}
 
             <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
             <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}">

@@ -29,7 +29,7 @@ twig:
     globals:
         template_parameters:
             bootstrap:
-                theme: "metro"
+                theme: "theme"
 
 # Assetic Configuration
 assetic:

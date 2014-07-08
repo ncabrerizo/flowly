@@ -1,39 +1,39 @@
 {% extends 'AtekiaFlowlyBundle:Layout:default.html.twig' %}
 
 {% block title %}
-    {{ 'manageusers.title'|trans }}
+    {{ 'manageproviders.title'|trans }}
 {% endblock %}
 
 {% block content %}
 
     <div class="panel panel-default">
-        <div class="panel-heading"><h4>{{ 'manageusers.manageusersandpermissions'|trans }}</h4></div>
+        <div class="panel-heading"><h4>{{ 'manageproviders.manageproviders'|trans }}</h4></div>
         <div class="panel-body">
-            <p>{{ 'manageusers.description'|trans }}</p>
+            <p>{{ 'manageproviders.description'|trans }}</p>
             <div class="well well-sm">
                 <div class="btn-group">
-                    <a href="{{ path('atekia_flowly_admin_adduser') }}" class="btn btn-default"><i class="fa fa-user fa-fw"></i> {{ 'manageusers.adduser'|trans }}</a>
+                    <a href="{{ path('atekia_flowly_admin_adduser') }}" class="btn btn-default"><i class="fa fa-user fa-fw"></i> {{ 'manageproviders.addprovider'|trans }}</a>
                 </div>
             </div>
             <div class="panel-body">
                 <table class="table table-striped table-bordered table-align-middle dataTable">
                     <thead>
                         <tr>
-                            <th>{{ 'manageusers.username'|trans }}</th>
-                            <th>{{ 'manageusers.realname'|trans }}</th>
-                            <th>{{ 'manageusers.email'|trans }}</th>
-                            <th>{{ 'manageusers.action'|trans }}</th>
+                            <th>{{ 'manageproviders.tradename'|trans }}</th>
+                            <th>{{ 'manageproviders.regname'|trans }}</th>
+                            <th>{{ 'manageproviders.taxid'|trans }}</th>
+                            <th>{{ 'manageproviders.action'|trans }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for provider in providers %}
                             <tr>
+                                <td>{{ provider.tradeName }}</td>
                                 <td>{{ provider.regName }}</td>
-                                <td>{{ user.contactPerson }}</td>
-                                <td>{{ user.email }}</td>
+                                <td>{{ provider.taxId }}</td>
                                 <td class="td-center">
                                     <div class="btn-group">
-                                        <a class ="btn btn-default" href="#"><i class="fa fa-pencil-square-o fa-fw"></i> {{ 'manageusers.edit'|trans }}</a>
+                                        <a class ="btn btn-default" href="#"><i class="fa fa-pencil-square-o fa-fw"></i> {{ 'manageproviders.edit'|trans }}</a>
                                     </div>
                                 </td>
                             </tr>
