@@ -8,6 +8,7 @@ body {
     position: static;
     font-family: "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding-top: 70px;
+    padding-right: 0 !important;
 }
 
 @media (max-width: 1199px) {
@@ -45,6 +46,10 @@ input, textarea, .selectable, .selectable * {
     overflow-y: auto;
 }
 
+.navbar-brand {
+    font-style: italic;
+}
+
 table.dataTable {
     display: none;
 }
@@ -76,7 +81,6 @@ table.dataTable thead > tr > th {
         bottom: 0;
         width: 100%;
         height: 60px;
-        background-color: #f5f5f5;
     }
 
     .footer .footer-text {
@@ -93,7 +97,6 @@ table.dataTable thead > tr > th {
     .footer .footer-text, .footer .footer-logo {
         margin-top: 20px;
         margin-bottom: 20px;
-        color: #999;
         height: 20px;
         overflow: hidden;
     }
@@ -107,7 +110,7 @@ table.dataTable thead > tr > th {
     }
 
     .footer .footer-logo img {
-        vertical-align: baseline;
+        vertical-align: middle;
     }
 
 }
@@ -123,7 +126,6 @@ table.dataTable thead > tr > th {
         bottom: 0;
         width: 100%;
         height: 100px;
-        background-color: #f5f5f5;
     }
 
     .footer .footer-text {
@@ -136,7 +138,6 @@ table.dataTable thead > tr > th {
     }
 
     .footer .footer-text, .footer .footer-logo {
-        color: #999;
         text-align: center;
         height: 20px;
         overflow: hidden;
@@ -146,6 +147,26 @@ table.dataTable thead > tr > th {
         vertical-align: baseline;
     }
 
+}
+
+.footer {
+    background-color: #222;
+    background-image: -webkit-linear-gradient(top, #222 0%, #3c3c3c 100%);
+    background-image: -o-linear-gradient(top, #222 0%, #3c3c3c 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#222), to(#3c3c3c));
+    background-image: linear-gradient(to bottom, #222 0%, #3c3c3c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff3c3c3c', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    background-repeat: repeat-x;
+}
+
+.footer .footer-text, .footer .footer-logo {
+    color: #fff;
+    font-size: 12px;
+}
+
+.footer-text {
+    padding-top: 2px;
 }
 
 .dataTables_filter label input {
