@@ -89,6 +89,8 @@ class DatabaseHelper
                     );
                     ");
 
+                break;
+
             case 'clients':
 
                 $conn->executeQuery("
@@ -111,6 +113,8 @@ class DatabaseHelper
                         swift TEXT
                     );
                     ");
+
+                break;
 
             default:
 
