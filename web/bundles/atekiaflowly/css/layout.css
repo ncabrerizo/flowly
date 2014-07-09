@@ -174,9 +174,7 @@ table.dataTable thead > tr > th {
 }
 
 .form-signin {
-    max-width:330px;
-    margin:0 auto;
-    padding:15px;
+    margin: 15px 40px;
 }
 
 .form-signin .form-signin-heading, .form-signin .checkbox {
