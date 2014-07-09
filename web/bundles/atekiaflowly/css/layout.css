@@ -214,12 +214,12 @@ table.dataTable thead > tr > th {
 }
 
 .account-wall {
-    margin-top:20px;
+    margin-bottom: 20px;
     background-color:#f7f7f7;
     -moz-box-shadow:0 2px 2px rgba(0,0,0,0.3);
     -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.3);
     box-shadow:0 2px 2px rgba(0,0,0,0.3);
-    padding:40px 0 20px;
+    padding:40px 0 20px 0;
 }
 
 .login-title {
@@ -245,6 +245,10 @@ table.dataTable thead > tr > th {
 .new-account {
     display:block;
     margin-top:10px;
+}
+
+label.checkbox.pull-left {
+    padding-left: 20px;
 }
 
 #errortable {

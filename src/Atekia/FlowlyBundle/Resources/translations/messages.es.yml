@@ -29,7 +29,7 @@ login:
     title: inicio de sesión
     username: Nombre de usuario
     password: Contraseña
-    signin: Inicio de sesión
+    signin: Iniciar sesión
     rememberme: Recordarme
     needhelp: ¿Necesita ayuda?
     error: Nombre de usuario o contraseña incorrectos

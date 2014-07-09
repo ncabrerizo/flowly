@@ -20,11 +20,14 @@
                     <input type="text" class="form-control" placeholder="{{ 'login.username'|trans }}" required autofocus name="_username" value="{{ last_username }}">
                     <input type="password" class="form-control" placeholder="{{ 'login.password'|trans }}" required name="_password">
                     <button class="btn btn-lg btn-primary btn-block" type="submit">
-                        {{ 'login.signin'|trans }}</button>
-                    <label class="checkbox pull-left">
-                        <input type="checkbox" name="_remember_me">
-                        {{ 'login.rememberme'|trans }}
-                    </label>
+                        {{ 'login.signin'|trans }}
+                    </button>
+                    <div class="checkbox pull-left">
+                        <label>
+                            <input type="checkbox" name="_remember_me">
+                            {{ 'login.rememberme'|trans }}
+                        </label>
+                    </div>
                     <a href="#" class="bootbox-alert pull-right need-help" data-message="{{ 'login.helpmessage'|trans }}">{{ 'login.needhelp'|trans }} </a>
                     <span class="clearfix"></span>
                 </form>
