@@ -115,7 +115,7 @@ table.dataTable thead > tr > th {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
     body {
         padding-bottom: 100px;
