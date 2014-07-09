@@ -1,5 +1,7 @@
 # This file is auto-generated during the composer install
 parameters:
+    app_name: flowly
+    bootstrap_theme: theme
     database_driver: pdo_sqlite
     database_host: 127.0.0.1
     database_port: null

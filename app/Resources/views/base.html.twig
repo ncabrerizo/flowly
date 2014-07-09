@@ -197,7 +197,7 @@
 
     </script>
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{{ template_parameters.app_name }} - {% block title %}{% endblock %}</title>
 
     {% block stylesheets %}{% endblock %}
 

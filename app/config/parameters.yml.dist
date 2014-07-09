@@ -1,4 +1,8 @@
 parameters:
+    app_name: app
+
+    bootstrap_theme: null
+
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
@@ -16,4 +20,5 @@ parameters:
 
     locale:            en
     available_locales: ["es", "ca", "en", "fr"]
+
     secret:            ThisTokenIsNotSoSecretChangeIt

@@ -28,8 +28,9 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         template_parameters:
+            app_name: "%app_name%"
             bootstrap:
-                theme: "theme"
+                theme: "%bootstrap_theme%"
 
 # Assetic Configuration
 assetic:
