@@ -9,11 +9,17 @@ class DatabaseHelper
     private $connection;
 
     public function __construct(Connection $connection) {
+
         $this->connection = $connection;
+
+        $this->connection->exec('PRAGMA foreign_keys = ON;');
+
     }
 
     public function getConnection() {
+
         return $this->connection;
+
     }
 
     public function initializeTable($table) {
@@ -22,7 +28,7 @@ class DatabaseHelper
 
         $table = strtolower($table);
 
-        $conn = $this->connection;
+        $conn = $this->getConnection();
 
         switch($table) {
 
