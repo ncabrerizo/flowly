@@ -14,7 +14,6 @@ body {
 @media (max-width: 1199px) {
 
     body {
-        position: inherit;
         padding-top: 0;
     }
 
@@ -245,14 +244,20 @@ table.dataTable thead > tr > th {
     margin-top:10px;
 }
 
-label.checkbox.pull-left {
-    padding-left: 20px;
-}
-
-#errortable {
-    width: 100%
-}
-
-#errortable td {
+.errortable {
+    width: 100%;
     text-align: center;
+}
+
+i.fa.fa-exclamation-triangle {
+    font-size: 0;
+    font-size: calc(100vh + 20px);
+    color: #f6f6f6;
+    position: fixed;
+    top: -20px;
+    left: calc(30% - 100vh * 0.5);
+    z-index: -1;
+    transform: rotate(12deg);
+    -ms-transform: rotate(12deg);
+    -webkit-transform: rotate(12deg);
 }

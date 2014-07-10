@@ -24,6 +24,8 @@ error:
     oops: ¡Ups!
     serverreturnederror: El servidor ha devuelto un error <strong>%error%</strong>.
     pagecouldnotbeloaded: No se ha podido cargar la página.
+    back: Atrás
+    home: Inicio
 
 login:
     title: inicio de sesión

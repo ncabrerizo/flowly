@@ -1,28 +1,30 @@
 {% extends 'AtekiaFlowlyBundle:Layout:default.html.twig' %}
 
+{% block title %}{{ 'error.title'|trans }}{% endblock %}
+
 {% block content %}
+
+    <i class="fa fa-exclamation-triangle"></i>
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="well well-lg">
-                <table id="errortable">
-                    <tbody>
-                        <tr>
-                            <td class="">
-                                <i class="fa fa-exclamation-triangle" style="font-size: 140px"></i>
-                            </td>
-                            <td class="">
-                                <h2>{{ 'error.oops'|trans }}</h2>
-                                <p>
-                                    {% if status_code is defined %}
-                                        {{ 'error.serverreturnederror'|trans({'%error%': status_code})|raw }}<br>
-                                    {% endif %}
-                                    {{ 'error.pagecouldnotbeloaded'|trans }}
-                                </p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="well-lg errortable">
+                <h1>{{ 'error.oops'|trans }}</h1>
+                <p>
+                    {% if status_code is defined %}
+                        {{ 'error.serverreturnederror'|trans({'%error%': status_code})|raw }}<br>
+                    {% endif %}
+                    {{ 'error.pagecouldnotbeloaded'|trans }}
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                    <a href="{{ path('atekia_flowly_home') }}" class="btn btn-default">
+                        <i class="fa fa-home fa-fw"></i> {{ 'error.home'|trans }}
+                    </a>
+                    <a href="#" class="btn btn-default" onclick="history.go(-1);return false;">
+                        <i class="fa fa-history fa-fw"></i> {{ 'error.back'|trans }}
+                    </a>
+                </p>
             </div>
         </div>
     </div>
