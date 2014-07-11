@@ -249,12 +249,13 @@ table.dataTable thead > tr > th {
     text-align: center;
 }
 
-i.fa.fa-exclamation-triangle {
-    font-size: 0;
+.floating-background {
+    font-size: 620px;
     font-size: calc(100vh + 20px);
     color: #f6f6f6;
     position: fixed;
     top: -20px;
+    left: calc(30% - 310px);
     left: calc(30% - 100vh * 0.5);
     z-index: -1;
     transform: rotate(12deg);
