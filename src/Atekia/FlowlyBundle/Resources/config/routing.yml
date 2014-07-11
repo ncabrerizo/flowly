@@ -2,34 +2,40 @@ atekia_flowly_home:
     path:  /
     defaults: { _controller: AtekiaFlowlyBundle:Home:index }
 
+atekia_flowly_error:
+    path:  /error
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    'TwigBundle:Exception:error.html.twig'
+
 atekia_flowly_admin_manageusers:
-    path:  /admin/manageusers
+    path:  /admin/users
     defaults: { _controller: AtekiaFlowlyBundle:Security:manageusers }
 
 atekia_flowly_admin_manageusers_disabled:
-    path:  /admin/manageusers/disabled
+    path:  /admin/users/disabled
     defaults: { _controller: AtekiaFlowlyBundle:Security:manageusers, active: false }
 
 atekia_flowly_admin_manageusers_enableuser:
-    path:  /admin/manageusers/enable/{user}
+    path:  /admin/users/enable/{user}
     defaults: { _controller: AtekiaFlowlyBundle:Security:enable, active: true }
     requirements:
         user:  \d+
 
 atekia_flowly_admin_manageusers_disableuser:
-    path:  /admin/manageusers/disable/{user}
+    path:  /admin/users/disable/{user}
     defaults: { _controller: AtekiaFlowlyBundle:Security:enable, active: false }
     requirements:
         user:  \d+
 
 atekia_flowly_admin_edituser:
-    path:  /admin/manageusers/user/{userid}
+    path:  /admin/users/user/{userid}
     defaults: { _controller: AtekiaFlowlyBundle:Security:edituser }
     requirements:
         userid:  \d+
 
 atekia_flowly_admin_adduser:
-    path:  /admin/manageusers/adduser
+    path:  /admin/users/add
     defaults: { _controller: AtekiaFlowlyBundle:Security:adduser }
 
 atekia_flowly_user_config:
@@ -37,5 +43,21 @@ atekia_flowly_user_config:
     defaults: { _controller: AtekiaFlowlyBundle:Security:edituser }
 
 atekia_flowly_expenses_manageproviders:
-    path:  /expenses/manageproviders
+    path:  /expenses/providers
     defaults: { _controller: AtekiaFlowlyBundle:Expenses:manageproviders }
+
+atekia_flowly_expenses_managproviders_removeprovider:
+    path:  /expenses/providers/remove/{user}
+    defaults: { _controller: AtekiaFlowlyBundle:Security:enable, active: false }
+    requirements:
+        user:  \d+
+
+atekia_flowly_expenses_editprovider:
+    path:  /expenses/providers/provider/{userid}
+    defaults: { _controller: AtekiaFlowlyBundle:Security:edituser }
+    requirements:
+        userid:  \d+
+
+atekia_flowly_expenses_addprovider:
+    path:  /expenses/providers/add
+    defaults: { _controller: AtekiaFlowlyBundle:Security:adduser }
