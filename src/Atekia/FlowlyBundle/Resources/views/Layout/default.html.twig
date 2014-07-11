@@ -89,7 +89,7 @@
                                 {% endif %}
                             </ul>
                         </li>
-                    {% else %}
+                    {% elseif status_code is not defined %}
                         <li>
                             <a href="{{ path('login') }}"><i class="fa fa-sign-in fa-fw"></i> {{ 'layout.signin'|trans }}</a>
                         </li>
