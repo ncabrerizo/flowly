@@ -12,11 +12,11 @@ class DatabaseHelper
 
         $this->connection = $connection;
 
-        $this->connection->exec('PRAGMA foreign_keys = ON;');
-
     }
 
     public function getConnection() {
+
+        $this->connection->exec('PRAGMA foreign_keys = ON;');
 
         return $this->connection;
 
