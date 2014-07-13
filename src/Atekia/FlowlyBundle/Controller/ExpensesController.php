@@ -70,45 +70,75 @@ class ExpensesController extends Controller
                 FROM
                     providers
                 WHERE
-                    taxId = :taxId;
+                    taxId = :taxId
+                    AND country = :country;
+                ;
             ");
 
             $stmt->bindValue('taxId', $data['taxId']);
+            $stmt->bindValue('country', $data['country']);
 
             $stmt->execute();
 
             $result = $stmt->fetchColumn();
 
-            if ($result && $result[0] > 0) {
+            if ($data['taxId'] != null && $result && $result[0] > 0) {
 
-                $result = 'error_taxid';
+                $result = 'error_taxidinuse';
 
             } else {
 
-                /*$stmt = $conn->prepare("
-                    INSERT INTO users (
-                        username,
-                        realname,
-                        password,
+                $stmt = $conn->prepare("
+                    INSERT INTO providers (
+                        taxId,
+                        regName,
+                        tradeName,
+                        address,
+                        postalCode,
+                        city,
+                        province,
+                        country,
+                        telephone,
+                        fax,
+                        mobile,
+                        contactPerson,
                         email,
-                        role,
-                        active
+                        iban,
+                        swift
                     ) VALUES (
-                        :username,
-                        :realname,
-                        :password,
+                        :taxId,
+                        :regName,
+                        :tradeName,
+                        :address,
+                        :postalCode,
+                        :city,
+                        :province,
+                        :country,
+                        :telephone,
+                        :fax,
+                        :mobile,
+                        :contactPerson,
                         :email,
-                        :role,
-                        :active
+                        :iban,
+                        :swift
                     );
                 ");
 
-                $stmt->bindValue('username', $data['username']);
-                $stmt->bindValue('realname', $data['realname']);
-                $stmt->bindValue('password', base64_encode(hash('sha512', $data['password'], 1)));
+                $stmt->bindValue('taxId', $data['taxId']);
+                $stmt->bindValue('regName', $data['regName']);
+                $stmt->bindValue('tradeName', $data['tradeName']);
+                $stmt->bindValue('address', $data['address']);
+                $stmt->bindValue('postalCode', $data['postalCode']);
+                $stmt->bindValue('city', $data['city']);
+                $stmt->bindValue('province', $data['province']);
+                $stmt->bindValue('country', $data['country']);
+                $stmt->bindValue('telephone', $data['telephone']);
+                $stmt->bindValue('fax', $data['fax']);
+                $stmt->bindValue('mobile', $data['mobile']);
+                $stmt->bindValue('contactPerson', $data['contactPerson']);
                 $stmt->bindValue('email', $data['email']);
-                $stmt->bindValue('role', isset($data['admin']) ? 'ROLE_ADMIN' : 'ROLE_USER');
-                $stmt->bindValue('active', 1);
+                $stmt->bindValue('iban', $data['iban']);
+                $stmt->bindValue('swift', $data['swift']);
 
                 $stmt->execute();
 
@@ -121,7 +151,7 @@ class ExpensesController extends Controller
 
                     $result = 'error';
 
-                }*/
+                }
 
             }
 

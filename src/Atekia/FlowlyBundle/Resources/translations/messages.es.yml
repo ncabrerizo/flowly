@@ -227,6 +227,7 @@ addprovider:
     requiredfail: Complete todos los campos obligatorios.
     taxiderror: El NIF o número de IVA introducido no es correcto.
     error: Ha ocurrido un error.
+    taxidinuse: Ya existe un proveedor con el NIF o número de IVA facilitado.
     bizdetails: Datos de la empresa
     locationdetails: Datos de ubicación
     contactdetails: Datos de contacto

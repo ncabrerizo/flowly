@@ -24,6 +24,14 @@
                             {{ 'addprovider.success'|trans }}
                         </div>
                     {% endif %}
+                    {% if result is defined and result == 'error_taxidinuse' %}
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                                &times;
+                            </button>
+                            {{ 'addprovider.taxidinuse'|trans }}
+                        </div>
+                    {% endif %}
                     {% if result is defined and result == 'error' %}
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
