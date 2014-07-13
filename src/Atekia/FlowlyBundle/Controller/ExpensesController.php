@@ -50,7 +50,7 @@ class ExpensesController extends Controller
 
     }
 
-    public function adduserAction() {
+    public function addproviderAction() {
 
         if ($this->get('request')->getMethod() == "POST") {
 
@@ -68,12 +68,12 @@ class ExpensesController extends Controller
                 SELECT
                     count(id)
                 FROM
-                    users
+                    providers
                 WHERE
-                    username = :username;
+                    taxId = :taxId;
             ");
 
-            $stmt->bindValue('username', $data['username']);
+            $stmt->bindValue('taxId', $data['taxId']);
 
             $stmt->execute();
 
@@ -81,11 +81,11 @@ class ExpensesController extends Controller
 
             if ($result && $result[0] > 0) {
 
-                $result = 'error_username';
+                $result = 'error_taxid';
 
             } else {
 
-                $stmt = $conn->prepare("
+                /*$stmt = $conn->prepare("
                     INSERT INTO users (
                         username,
                         realname,
@@ -121,7 +121,7 @@ class ExpensesController extends Controller
 
                     $result = 'error';
 
-                }
+                }*/
 
             }
 

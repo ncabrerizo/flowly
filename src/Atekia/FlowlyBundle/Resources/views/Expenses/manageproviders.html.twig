@@ -19,6 +19,7 @@
                 <table class="table table-striped table-bordered table-align-middle dataTable">
                     <thead>
                         <tr>
+                            <th>{{ 'manageproviders.id'|trans }}</th>
                             <th>{{ 'manageproviders.tradename'|trans }}</th>
                             <th>{{ 'manageproviders.regname'|trans }}</th>
                             <th>{{ 'manageproviders.taxid'|trans }}</th>
@@ -28,6 +29,7 @@
                     <tbody>
                         {% for provider in providers %}
                             <tr>
+                                <td>{{ provider.id }}</td>
                                 <td>{{ provider.tradeName }}</td>
                                 <td>{{ provider.regName }}</td>
                                 <td>{{ provider.taxId }}</td>

@@ -77,7 +77,7 @@ class DatabaseHelper
                 $conn->executeQuery("
                     CREATE TABLE IF NOT EXISTS providers (
                         id INTEGER PRIMARY KEY,
-                        taxId TEXT UNIQUE NOT NULL,
+                        taxId TEXT,
                         regName TEXT,
                         tradeName TEXT,
                         address TEXT,
@@ -102,7 +102,7 @@ class DatabaseHelper
                 $conn->executeQuery("
                     CREATE TABLE IF NOT EXISTS clients (
                         id INTEGER PRIMARY KEY,
-                        taxId TEXT UNIQUE NOT NULL,
+                        taxId TEXT,
                         regName TEXT,
                         tradeName TEXT,
                         address TEXT,

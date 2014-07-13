@@ -78,6 +78,8 @@ adduser:
     error: Ha ocurrido un error.
     admin: Administrador
     permissions: Permisos
+    userdata: Datos de usuario
+    personaldata: Datos personales
 
 edituser:
     title: editar usuario
@@ -97,6 +99,8 @@ edituser:
     error: Ha ocurrido un error.
     admin: Administrador
     permissions: Permisos
+    userdata: Datos de usuario
+    personaldata: Datos personales
 
 datatable:
     sEmptyTable: Ningún dato disponible en esta tabla
@@ -176,6 +180,7 @@ manageproviders:
     title: administración de proveedores
     manageproviders: Administración de proveedores
     description: Desde aquí puede añadir, modificar y eliminar proveedores.
+    id: ID
     taxid: NIF / Núm. IVA
     regname: Nombre fiscal
     tradename: Nombre comercial
@@ -196,3 +201,33 @@ manageproviders:
     edit: Editar
     confirmdelete: ¿Está seguro de que desea eliminar el proveedor <i>%name%</i>?
     addprovider: Añadir proveedor
+
+addprovider:
+    title: añadir proveedor
+    addprovider: Añadir proveedor
+    description: Complete todos los campos del formulario con la información del nuevo proveedor.
+    id: ID
+    taxid: NIF / Núm. IVA
+    regname: Nombre fiscal
+    tradename: Nombre comercial
+    address: Dirección
+    postalcode: Código Postal
+    city: Población
+    province: Provincia / Estado
+    country: País
+    telephone: Teléfono
+    fax: Fax
+    mobile: Móvil
+    contactperson: Persona de contacto
+    email: Correo electrónico
+    iban: Cuenta corriente (IBAN)
+    swift: Código SWIFT
+    cancel: Cancelar
+    success: El proveedor se ha añadido correctamente.
+    requiredfail: Complete todos los campos obligatorios.
+    taxiderror: El NIF o número de IVA introducido no es correcto.
+    error: Ha ocurrido un error.
+    bizdetails: Datos de la empresa
+    locationdetails: Datos de ubicación
+    contactdetails: Datos de contacto
+    bankingdetails: Datos bancarios

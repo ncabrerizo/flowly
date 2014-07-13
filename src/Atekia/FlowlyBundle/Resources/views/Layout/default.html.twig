@@ -19,47 +19,65 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ path('atekia_flowly_home') }}">{{ template_parameters.app_name }}</a>
+                <a class="navbar-brand" href="{{ path('atekia_flowly_home') }}">
+                    {{ template_parameters.app_name }}
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="{% if app.request.attributes.get('_route') starts with 'atekia_flowly_home' %}active{% endif %}">
-                        <a href="{{ path('atekia_flowly_home') }}"><i class="fa fa-home fa-fw"></i> {{ 'layout.home'|trans }}</a>
+                        <a href="{{ path('atekia_flowly_home') }}">
+                            <i class="fa fa-home fa-fw"></i> {{ 'layout.home'|trans }}
+                        </a>
                     </li>
                     {% if app.user and is_granted('ROLE_USER') %}
                         <li class="{% if app.request.attributes.get('_route') starts with 'atekia_flowly_expenses' %}active{% endif %} dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart fa-fw"></i> {{ 'layout.purchasesexpenses'|trans }} <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-shopping-cart fa-fw"></i> {{ 'layout.purchasesexpenses'|trans }} <b class="caret"></b>
+                            </a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-header">{{ 'layout.providers'|trans }}</li>
-                                <li><a href="{{ path('atekia_flowly_expenses_manageproviders') }}">{{ 'layout.manageproviders'|trans }}</a></li>
+                                <li>
+                                    <a href="{{ path('atekia_flowly_expenses_manageproviders') }}">
+                                        {{ 'layout.manageproviders'|trans }}
+                                    </a>
+                                </li>
                                 <li class="divider"></li>
                             </ul>
                         </li>
                     {% endif %}
                     {% if app.user and is_granted('ROLE_USER') %}
                         <li class="{% if app.request.attributes.get('_route') starts with 'atekia_flowly_revenues' %}active{% endif %} dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-truck fa-fw"></i> {{ 'layout.salesrevenues'|trans }} <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-truck fa-fw"></i> {{ 'layout.salesrevenues'|trans }} <b class="caret"></b>
+                            </a>
                             <ul class="dropdown-menu">
                             </ul>
                         </li>
                     {% endif %}
                     {% if app.user and is_granted('ROLE_USER') %}
                         <li class="{% if app.request.attributes.get('_route') starts with 'atekia_flowly_cash' %}active{% endif %} dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-money fa-fw"></i> {{ 'layout.cash'|trans }} <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-money fa-fw"></i> {{ 'layout.cash'|trans }} <b class="caret"></b>
+                            </a>
                             <ul class="dropdown-menu">
                             </ul>
                         </li>
                     {% endif %}
                     {% if app.user and is_granted('ROLE_USER') %}
                         <li class="{% if app.request.attributes.get('_route') starts with 'atekia_flowly_production' %}active{% endif %} dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tachometer fa-fw"></i> {{ 'layout.production'|trans }} <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-tachometer fa-fw"></i> {{ 'layout.production'|trans }} <b class="caret"></b>
+                            </a>
                             <ul class="dropdown-menu">
                             </ul>
                         </li>
                     {% endif %}
                     {% if app.user and is_granted('ROLE_USER') %}
                         <li class="{% if app.request.attributes.get('_route') starts with 'atekia_flowly_crm' %}active{% endif %} dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-support fa-fw"></i> {{ 'layout.support'|trans }} <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-support fa-fw"></i> {{ 'layout.support'|trans }} <b class="caret"></b>
+                            </a>
                             <ul class="dropdown-menu">
                             </ul>
                         </li>
@@ -71,27 +89,35 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i> {{ app.user.realname }} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="{{ path('logout') }}"><i class="fa fa-sign-out fa-fw"></i> {{ 'layout.signout'|trans }}</a>
+                                    <a href="{{ path('logout') }}">
+                                        <i class="fa fa-sign-out fa-fw"></i> {{ 'layout.signout'|trans }}
+                                    </a>
                                 </li>
                                 <li class="divider"></li>
                                 <li class="dropdown-header">
                                     {{ 'layout.user'|trans }}
                                 </li>
                                 <li>
-                                    <a href="{{ path('atekia_flowly_user_config') }}">{{ 'layout.accountsettings'|trans }}</a>
+                                    <a href="{{ path('atekia_flowly_user_config') }}">
+                                        {{ 'layout.accountsettings'|trans }}
+                                    </a>
                                 </li>
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <li class="divider"></li>
                                     <li class="dropdown-header">{{ 'layout.administrator'|trans }}</li>
                                     <li>
-                                        <a href="{{ path('atekia_flowly_admin_manageusers') }}">{{ 'layout.manageusersandpermissions'|trans }}</a>
+                                        <a href="{{ path('atekia_flowly_admin_manageusers') }}">
+                                            {{ 'layout.manageusersandpermissions'|trans }}
+                                        </a>
                                     </li>
                                 {% endif %}
                             </ul>
                         </li>
                     {% elseif status_code is not defined %}
                         <li>
-                            <a href="{{ path('login') }}"><i class="fa fa-sign-in fa-fw"></i> {{ 'layout.signin'|trans }}</a>
+                            <a href="{{ path('login') }}">
+                                <i class="fa fa-sign-in fa-fw"></i> {{ 'layout.signin'|trans }}
+                            </a>
                         </li>
                     {% endif %}
                 </ul>

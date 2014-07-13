@@ -20,5 +20,6 @@ parameters:
 
     locale:            en
     available_locales: ["es", "ca", "en", "fr"]
+    country:           es
 
     secret:            ThisTokenIsNotSoSecretChangeIt

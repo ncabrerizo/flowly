@@ -29,6 +29,7 @@ twig:
     globals:
         template_parameters:
             app_name: "%app_name%"
+            country: "%country%"
             bootstrap:
                 theme: "%bootstrap_theme%"
 
