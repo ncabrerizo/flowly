@@ -134,8 +134,7 @@
                             <div class="col-sm-10">
                                 <select class="form-control"
                                         id="inputCountry"
-                                        name="country"
-                                        {% if data.country is defined %}value="{{ data.country }}"{% endif %}>
+                                        name="country">
                                     <option value="af">Afghanistan</option>
                                     <option value="ax">Åland Islands</option>
                                     <option value="al">Albania</option>
@@ -619,6 +618,8 @@
                 passed = false;
 
             }
+
+            $('#inputTaxId').val($('#inputTaxId').val().toUpperCase());
 
             if ($('#inputCountry').val() == 'es' && !validateNIF($('#inputTaxId').val())) {
 
