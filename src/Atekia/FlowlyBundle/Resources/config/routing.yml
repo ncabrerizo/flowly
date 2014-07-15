@@ -1,12 +1,18 @@
+# HOME #
+
 atekia_flowly_home:
     path:  /
     defaults: { _controller: AtekiaFlowlyBundle:Home:index }
+
+# ERROR #
 
 atekia_flowly_error:
     path:  /error
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    'TwigBundle:Exception:error.html.twig'
+
+# USERS #
 
 atekia_flowly_admin_manageusers:
     path:  /admin/users
@@ -42,11 +48,13 @@ atekia_flowly_user_config:
     path:  /user/config
     defaults: { _controller: AtekiaFlowlyBundle:Security:edituser }
 
+# PROVIDERS #
+
 atekia_flowly_expenses_manageproviders:
     path:  /expenses/providers
     defaults: { _controller: AtekiaFlowlyBundle:Expenses:manageproviders }
 
-atekia_flowly_expenses_managproviders_removeprovider:
+atekia_flowly_expenses_manageproviders_removeprovider:
     path:  /expenses/providers/remove/{id}
     defaults: { _controller: AtekiaFlowlyBundle:Expenses:removeprovider }
     requirements:
@@ -61,3 +69,25 @@ atekia_flowly_expenses_editprovider:
 atekia_flowly_expenses_addprovider:
     path:  /expenses/providers/add
     defaults: { _controller: AtekiaFlowlyBundle:Expenses:addprovider }
+
+# CLIENTS #
+
+atekia_flowly_revenues_manageclients:
+    path:  /revenues/clients
+    defaults: { _controller: AtekiaFlowlyBundle:Revenues:manageclients }
+
+atekia_flowly_revenues_manageclients_removeclient:
+    path:  /revenues/clients/remove/{id}
+    defaults: { _controller: AtekiaFlowlyBundle:Revenues:removeclient }
+    requirements:
+        id:  \d+
+
+atekia_flowly_revenues_editclient:
+    path:  /revenues/clients/client/{id}
+    defaults: { _controller: AtekiaFlowlyBundle:Revenues:editclient }
+    requirements:
+        id:  \d+
+
+atekia_flowly_revenues_addclient:
+    path:  /revenues/clients/add
+    defaults: { _controller: AtekiaFlowlyBundle:Revenues:addclient }

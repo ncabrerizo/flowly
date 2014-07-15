@@ -5,14 +5,14 @@ namespace Atekia\FlowlyBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
 
-class ExpensesController extends Controller
+class RevenuesController extends Controller
 {
 
-    public function manageprovidersAction($active = true) {
+    public function manageclientsAction($active = true) {
 
         $dbh = $this->get('atekia_flowly_database_helper');
 
-        $dbh->initializeTable('providers');
+        $dbh->initializeTable('clients');
 
         $conn = $dbh->getConnection();
 
@@ -35,21 +35,21 @@ class ExpensesController extends Controller
                 iban,
                 swift
             FROM
-                providers;
+                clients;
         ");
 
         $stmt->execute();
 
-        $providers = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $clients = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-        return $this->render('AtekiaFlowlyBundle:Expenses:manageproviders.html.twig',
+        return $this->render('AtekiaFlowlyBundle:Revenues:manageclients.html.twig',
             [
-                'providers' => $providers
+                'clients' => $clients
             ]);
 
     }
 
-    public function addproviderAction() {
+    public function addclientAction() {
 
         if ($this->get('request')->getMethod() == "POST") {
 
@@ -67,7 +67,7 @@ class ExpensesController extends Controller
                 SELECT
                     count(id)
                 FROM
-                    providers
+                    clients
                 WHERE
                     taxId = :taxId
                     AND country = :country;
@@ -88,7 +88,7 @@ class ExpensesController extends Controller
             } else {
 
                 $stmt = $conn->prepare("
-                    INSERT INTO providers (
+                    INSERT INTO clients (
                         taxId,
                         regName,
                         tradeName,
@@ -154,7 +154,7 @@ class ExpensesController extends Controller
 
             }
 
-            return $this->render('AtekiaFlowlyBundle:Expenses:addprovider.html.twig',
+            return $this->render('AtekiaFlowlyBundle:Revenues:addclient.html.twig',
                 [
                     'data' => $data,
                     'result' => $result
@@ -162,13 +162,13 @@ class ExpensesController extends Controller
 
         } else {
 
-            return $this->render('AtekiaFlowlyBundle:Expenses:addprovider.html.twig');
+            return $this->render('AtekiaFlowlyBundle:Revenues:addclient.html.twig');
 
         }
 
     }
 
-    public function editproviderAction($id) {
+    public function editclientAction($id) {
 
         if ($this->get('request')->getMethod() == "POST") {
 
@@ -178,7 +178,7 @@ class ExpensesController extends Controller
 
             $result = null;
 
-            $dbh->initializeTable('providers');
+            $dbh->initializeTable('clients');
 
             $conn = $dbh->getConnection();
 
@@ -186,7 +186,7 @@ class ExpensesController extends Controller
                 SELECT
                     count(id)
                 FROM
-                    providers
+                    clients
                 WHERE
                     taxId = :taxId
                     AND country = :country
@@ -208,7 +208,7 @@ class ExpensesController extends Controller
             } else {
 
                 $stmt = $conn->prepare("
-                    UPDATE providers SET
+                    UPDATE clients SET
                         taxId = :taxId,
                         regName = :regName,
                         tradeName = :tradeName,
@@ -259,7 +259,7 @@ class ExpensesController extends Controller
 
             }
 
-            return $this->render('AtekiaFlowlyBundle:Expenses:editprovider.html.twig',
+            return $this->render('AtekiaFlowlyBundle:Revenues:editclient.html.twig',
                 [
                     'data' => $data,
                     'result' => $result
@@ -269,7 +269,7 @@ class ExpensesController extends Controller
 
             $dbh = $this->get('atekia_flowly_database_helper');
 
-            $dbh->initializeTable('providers');
+            $dbh->initializeTable('clients');
 
             $conn = $dbh->getConnection();
 
@@ -291,7 +291,7 @@ class ExpensesController extends Controller
                     iban,
                     swift
                 FROM
-                    providers
+                    clients
                 WHERE
                     id = :id;
             ");
@@ -307,7 +307,7 @@ class ExpensesController extends Controller
             else
                 throw $this->createNotFoundException();
 
-            return $this->render('AtekiaFlowlyBundle:Expenses:editprovider.html.twig',
+            return $this->render('AtekiaFlowlyBundle:Revenues:editclient.html.twig',
                 [
                     'data' => $data
                 ]);
@@ -316,18 +316,18 @@ class ExpensesController extends Controller
 
     }
 
-    public function removeproviderAction($id) {
+    public function removeclientAction($id) {
 
         $dbh = $this->get('atekia_flowly_database_helper');
 
-        $dbh->initializeTable('providers');
+        $dbh->initializeTable('clients');
 
         $conn = $dbh->getConnection();
 
         $stmt = $conn->prepare("
                 DELETE
                 FROM
-                    providers
+                    clients
                 WHERE
                     id = :id;
             ");
@@ -347,7 +347,10 @@ class ExpensesController extends Controller
         }
 
         return $this->redirect(
-            $this->generateUrl("atekia_flowly_expenses_manageproviders", [ 'result' => $result ])
+            $this->generateUrl("atekia_flowly_revenues_manageclients",
+                [
+                    'result' => $result
+                ])
         );
 
     }

@@ -42,7 +42,6 @@
                                         {{ 'layout.manageproviders'|trans }}
                                     </a>
                                 </li>
-                                <li class="divider"></li>
                             </ul>
                         </li>
                     {% endif %}
@@ -52,6 +51,12 @@
                                 <i class="fa fa-truck fa-fw"></i> {{ 'layout.salesrevenues'|trans }} <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
+                                <li class="dropdown-header">{{ 'layout.clients'|trans }}</li>
+                                <li>
+                                    <a href="{{ path('atekia_flowly_revenues_manageclients') }}">
+                                        {{ 'layout.manageclients'|trans }}
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     {% endif %}

@@ -1,106 +1,6 @@
-layout:
-    togglenavigation: Cambiar navegación
-    home: Inicio
-    purchasesexpenses: Compras
-    providers: Proveedores
-    manageproviders: Administrar proveedores
-    salesrevenues: Ventas
-    cash: Tesorería
-    production: Producción
-    support: Soporte
-    signin: Iniciar sesión
-    signout: Cerrar sesión
-    accountsettings: Configuración de la cuenta
-    user: Usuario
-    administrator: Administrador
-    manageusersandpermissions: Administrar usuarios y permisos
-    copynotice: © 2014, Atekia. Liberado bajo licencia AGPL.
+# SPANISH TRANSLATION #
 
-home:
-    title: inicio
-
-error:
-    title: ¡ups!
-    oops: ¡Ups!
-    serverreturnederror: El servidor ha devuelto un error <strong>%error%</strong>.
-    pagecouldnotbeloaded: No se ha podido cargar la página.
-    back: Atrás
-    home: Inicio
-
-login:
-    title: inicio de sesión
-    username: Nombre de usuario
-    password: Contraseña
-    signin: Iniciar sesión
-    rememberme: Recordarme
-    needhelp: ¿Necesita ayuda?
-    error: Nombre de usuario o contraseña incorrectos
-    helpmessage: Si tiene problemas para acceder a esta aplicación, consulte con el administrador de la misma.
-
-manageusers:
-    title: administración de usuarios y permisos
-    manageusersandpermissions: Administración de usuarios y permisos
-    description: Desde aquí puede añadir, modificar, habilitar y deshabilitar usuarios.
-    username: Usuario
-    realname: Nombre
-    email: Correo electrónico
-    permissions: Permisos
-    enabled: Habilitados
-    disabled: Deshabilitados
-    action: Acción
-    enable: Habilitar
-    disable: Deshabilitar
-    edit: Editar
-    confirmenable: ¿Está seguro de que desea habilitar el usuario <b>%user%</b>?
-    confirmdisable: ¿Está seguro de que desea deshabilitar el usuario <b>%user%</b>?
-    adduser: Añadir usuario
-    admin: Administrador
-    user: Usuario
-    superadmin: Superadministrador
-
-adduser:
-    title: añadir usuario
-    adduser: Añadir usuario
-    description: Complete todos los campos del formulario con la información del nuevo usuario.
-    warning: Una vez creado un usuario, éste sólo podrá ser deshabilitado, en ningún caso eliminado.
-    username: Nombre de usuario
-    realname: Nombre completo
-    email: Correo electrónico
-    permissions: Permisos
-    password: Contraseña
-    repeatpassword: Repita contraseña
-    cancel: Cancelar
-    success: El usuario se ha añadido correctamente.
-    passwordfail: La contraseña no coincide.
-    requiredfail: Complete todos los campos obligatorios.
-    usernamefail: El nombre de usuario es incorrecto.
-    usernameexists: El nombre de usuario especificado ya existe.
-    error: Ha ocurrido un error.
-    admin: Administrador
-    permissions: Permisos
-    userdata: Datos de usuario
-    personaldata: Datos personales
-
-edituser:
-    title: editar usuario
-    edituser: Editar usuario
-    description: Modifique los datos del usuario utilizando el formulario.
-    info: Si no desea cambiar la contraseña, deje los campos "Contraseña" y "Repita contraseña" en blanco.
-    username: Nombre de usuario
-    realname: Nombre completo
-    email: Correo electrónico
-    permissions: Permisos
-    password: Contraseña
-    repeatpassword: Repita contraseña
-    cancel: Cancelar
-    success: El usuario se ha modificado correctamente.
-    passwordfail: La contraseña no coincide.
-    requiredfail: Complete todos los campos obligatorios.
-    error: Ha ocurrido un error.
-    admin: Administrador
-    permissions: Permisos
-    userdata: Datos de usuario
-    personaldata: Datos personales
+# WIDGETS #
 
 datatable:
     sEmptyTable: Ningún dato disponible en esta tabla
@@ -176,6 +76,124 @@ datepicker:
         december: Dic
     today: Hoy
 
+# LAYOUT #
+
+layout:
+    togglenavigation: Cambiar navegación
+    home: Inicio
+    purchasesexpenses: Gastos
+    providers: Proveedores
+    manageproviders: Administrar proveedores
+    salesrevenues: Ingresos
+    clients: Clientes
+    manageclients: Administrar clientes
+    cash: Tesorería
+    production: Producción
+    support: Soporte
+    signin: Iniciar sesión
+    signout: Cerrar sesión
+    accountsettings: Configuración de la cuenta
+    user: Usuario
+    administrator: Administrador
+    manageusersandpermissions: Administrar usuarios y permisos
+    copynotice: © 2014, Atekia. Liberado bajo licencia AGPL.
+
+# HOME #
+
+home:
+    title: inicio
+
+# ERROR #
+
+error:
+    title: ¡ups!
+    oops: ¡Ups!
+    serverreturnederror: El servidor ha devuelto un error <strong>%error%</strong>.
+    pagecouldnotbeloaded: No se ha podido cargar la página.
+    back: Atrás
+    home: Inicio
+
+# LOGIN #
+
+login:
+    title: inicio de sesión
+    username: Nombre de usuario
+    password: Contraseña
+    signin: Iniciar sesión
+    rememberme: Recordarme
+    needhelp: ¿Necesita ayuda?
+    error: Nombre de usuario o contraseña incorrectos
+    helpmessage: Si tiene problemas para acceder a esta aplicación, consulte con el administrador de la misma.
+
+# USERS #
+
+manageusers:
+    title: administración de usuarios y permisos
+    manageusersandpermissions: Administración de usuarios y permisos
+    description: Desde aquí puede añadir, modificar, habilitar y deshabilitar usuarios.
+    username: Usuario
+    realname: Nombre
+    email: Correo electrónico
+    permissions: Permisos
+    enabled: Habilitados
+    disabled: Deshabilitados
+    action: Acción
+    enable: Habilitar
+    disable: Deshabilitar
+    edit: Editar
+    confirmenable: ¿Está seguro de que desea habilitar el usuario <b>%user%</b>?
+    confirmdisable: ¿Está seguro de que desea deshabilitar el usuario <b>%user%</b>?
+    adduser: Añadir usuario
+    admin: Administrador
+    user: Usuario
+    superadmin: Superadministrador
+
+adduser:
+    title: añadir usuario
+    adduser: Añadir usuario
+    description: Complete todos los campos del formulario con la información del nuevo usuario.
+    warning: Una vez creado un usuario, éste sólo podrá ser deshabilitado, en ningún caso eliminado.
+    username: Nombre de usuario
+    realname: Nombre completo
+    email: Correo electrónico
+    permissions: Permisos
+    password: Contraseña
+    repeatpassword: Repita contraseña
+    cancel: Cancelar
+    success: El usuario se ha añadido correctamente.
+    passwordfail: La contraseña no coincide.
+    requiredfail: Complete todos los campos obligatorios.
+    usernamefail: El nombre de usuario es incorrecto.
+    usernameexists: El nombre de usuario especificado ya existe.
+    error: Ha ocurrido un error.
+    admin: Administrador
+    permissions: Permisos
+    userdata: Datos de usuario
+    personaldata: Datos personales
+
+edituser:
+    title: editar usuario
+    edituser: Editar usuario
+    description: Modifique los datos del usuario utilizando el formulario.
+    info: Si no desea cambiar la contraseña, deje los campos "Contraseña" y "Repita contraseña" en blanco.
+    username: Nombre de usuario
+    realname: Nombre completo
+    email: Correo electrónico
+    permissions: Permisos
+    password: Contraseña
+    repeatpassword: Repita contraseña
+    cancel: Cancelar
+    success: El usuario se ha modificado correctamente.
+    passwordfail: La contraseña no coincide.
+    requiredfail: Complete todos los campos obligatorios.
+    error: Ha ocurrido un error.
+    admin: Administrador
+    permissions: Permisos
+    userdata: Datos de usuario
+    personaldata: Datos personales
+
+# PROVIDERS #
+
 manageproviders:
     title: administración de proveedores
     manageproviders: Administración de proveedores
@@ -199,7 +217,6 @@ manageproviders:
     action: Acción
     delete: Eliminar
     edit: Editar
-    view: Ver
     addprovider: Añadir proveedor
     remove: Eliminar
     confirmremove: ¿Está seguro de que desea eliminar el proveedor <b>%provider%</b>?
@@ -264,6 +281,101 @@ editprovider:
     taxiderror: El NIF o número de IVA introducido no es correcto.
     error: Ha ocurrido un error.
     taxidinuse: Ya existe un proveedor con el NIF o número de IVA facilitado.
+    ibanerror: El IBAN introducido no es correcto.
+    bizdetails: Datos de la empresa
+    locationdetails: Datos de ubicación
+    contactdetails: Datos de contacto
+    bankingdetails: Datos bancarios
+
+# CLIENTS #
+
+manageclients:
+    title: administración de clientes
+    manageclients: Administración de clientes
+    description: Desde aquí puede añadir, modificar y eliminar clientes.
+    id: ID
+    taxid: NIF / Núm. IVA
+    regname: Nombre fiscal
+    tradename: Nombre comercial
+    address: Dirección
+    postalcode: Código Postal
+    city: Población
+    province: Provincia / Estado
+    country: País
+    telephone: Teléfono
+    fax: Fax
+    mobile: Móvil
+    contactperson: Persona de contacto
+    email: Correo electrónico
+    iban: Cuenta corriente (IBAN)
+    swift: Código SWIFT
+    action: Acción
+    delete: Eliminar
+    edit: Editar
+    addclient: Añadir cliente
+    remove: Eliminar
+    confirmremove: ¿Está seguro de que desea eliminar el cliente <b>%client%</b>?
+    remsuccess: Se ha eliminado correctamente el cliente
+    remerror: El cliente no se ha podido eliminar
+
+addclient:
+    title: añadir cliente
+    addclient: Añadir cliente
+    description: Complete los campos del formulario con la información del nuevo cliente.
+    id: ID
+    taxid: NIF / Núm. IVA
+    regname: Nombre fiscal
+    tradename: Nombre comercial
+    address: Dirección
+    postalcode: Código Postal
+    city: Población
+    province: Provincia / Estado
+    country: País
+    telephone: Teléfono
+    fax: Fax
+    mobile: Móvil
+    contactperson: Persona de contacto
+    email: Correo electrónico
+    iban: Cuenta corriente (IBAN)
+    swift: Código SWIFT
+    cancel: Cancelar
+    success: El cliente se ha añadido correctamente.
+    requiredfail: Complete todos los campos obligatorios.
+    taxiderror: El NIF o número de IVA introducido no es correcto.
+    error: Ha ocurrido un error.
+    taxidinuse: Ya existe un cliente con el NIF o número de IVA facilitado.
+    ibanerror: El IBAN introducido no es correcto.
+    bizdetails: Datos de la empresa
+    locationdetails: Datos de ubicación
+    contactdetails: Datos de contacto
+    bankingdetails: Datos bancarios
+
+editclient:
+    title: editar cliente
+    editclient: Editar cliente
+    description: Modifique los campos del formulario con la información actualizada del cliente.
+    id: ID
+    taxid: NIF / Núm. IVA
+    regname: Nombre fiscal
+    tradename: Nombre comercial
+    address: Dirección
+    postalcode: Código Postal
+    city: Población
+    province: Provincia / Estado
+    country: País
+    telephone: Teléfono
+    fax: Fax
+    mobile: Móvil
+    contactperson: Persona de contacto
+    email: Correo electrónico
+    iban: Cuenta corriente (IBAN)
+    swift: Código SWIFT
+    cancel: Cancelar
+    success: El cliente se ha modificado correctamente.
+    requiredfail: Complete todos los campos obligatorios.
+    taxiderror: El NIF o número de IVA introducido no es correcto.
+    error: Ha ocurrido un error.
+    taxidinuse: Ya existe un cliente con el NIF o número de IVA facilitado.
     ibanerror: El IBAN introducido no es correcto.
     bizdetails: Datos de la empresa
     locationdetails: Datos de ubicación
