@@ -1,7 +1,7 @@
 {% extends 'AtekiaFlowlyBundle:Layout:default.html.twig' %}
 
 {% block title %}
-    {{ 'addprovider.title'|trans }}
+    {{ 'editprovider.title'|trans }}
 {% endblock %}
 
 {% block content %}
@@ -9,11 +9,11 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4>
-                {{ 'addprovider.addprovider'|trans }}
+                {{ 'editprovider.editprovider'|trans }}
             </h4>
         </div>
         <div class="panel-body">
-            <p>{{ 'addprovider.description'|trans }}</p>
+            <p>{{ 'editprovider.description'|trans }}</p>
             <div class="panel-body">
                 <div id="messages">
                     {% if result is defined and result == 'ok' %}
@@ -21,7 +21,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                                 &times;
                             </button>
-                            {{ 'addprovider.success'|trans }}
+                            {{ 'editprovider.success'|trans }}
                         </div>
                     {% endif %}
                     {% if result is defined and result == 'error_taxidinuse' %}
@@ -29,7 +29,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                                 &times;
                             </button>
-                            {{ 'addprovider.taxidinuse'|trans }}
+                            {{ 'editprovider.taxidinuse'|trans }}
                         </div>
                     {% endif %}
                     {% if result is defined and result == 'error' %}
@@ -37,7 +37,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                                 &times;
                             </button>
-                            {{ 'addprovider.error'|trans }}
+                            {{ 'editprovider.error'|trans }}
                         </div>
                     {% endif %}
                 </div>
@@ -45,11 +45,11 @@
 
                     <div class="well">
                         <div class="well-form-title">
-                            {{ 'addprovider.bizdetails'|trans }}
+                            {{ 'editprovider.bizdetails'|trans }}
                         </div>
                         <div class="form-group">
                             <label for="inputTaxId" class="control-label col-sm-2">
-                                {{ 'addprovider.taxid'|trans }}
+                                {{ 'editprovider.taxid'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -61,7 +61,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputRegName" class="control-label col-sm-2">
-                                {{ 'addprovider.regname'|trans }}
+                                {{ 'editprovider.regname'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputTradeName" class="control-label col-sm-2">
-                                {{ 'addprovider.tradename'|trans }}
+                                {{ 'editprovider.tradename'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -87,11 +87,11 @@
 
                     <div class="well">
                         <div class="well-form-title">
-                            {{ 'addprovider.locationdetails'|trans }}
+                            {{ 'editprovider.locationdetails'|trans }}
                         </div>
                         <div class="form-group">
                             <label for="inputAddress" class="control-label col-sm-2">
-                                {{ 'addprovider.address'|trans }}
+                                {{ 'editprovider.address'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -103,7 +103,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputCity" class="control-label col-sm-2">
-                                {{ 'addprovider.city'|trans }}
+                                {{ 'editprovider.city'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -115,7 +115,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputProvince" class="control-label col-sm-2">
-                                {{ 'addprovider.province'|trans }}
+                                {{ 'editprovider.province'|trans }}
                             </label>
                             <div class="col-sm-6">
                                 <input type="text"
@@ -125,7 +125,7 @@
                                        {% if data.province is defined %}value="{{ data.province }}"{% endif %}>
                             </div>
                             <label for="inputPostalCode" class="control-label col-sm-2">
-                                {{ 'addprovider.postalcode'|trans }}
+                                {{ 'editprovider.postalcode'|trans }}
                             </label>
                             <div class="col-sm-2">
                                 <input type="text"
@@ -137,7 +137,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputCountry" class="control-label col-sm-2">
-                                {{ 'addprovider.country'|trans }}
+                                {{ 'editprovider.country'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <select class="form-control"
@@ -394,11 +394,11 @@
 
                     <div class="well">
                         <div class="well-form-title">
-                            {{ 'addprovider.contactdetails'|trans }}
+                            {{ 'editprovider.contactdetails'|trans }}
                         </div>
                         <div class="form-group">
                             <label for="inputContactPerson" class="control-label col-sm-2">
-                                {{ 'addprovider.contactperson'|trans }}
+                                {{ 'editprovider.contactperson'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -410,7 +410,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputEmail" class="control-label col-sm-2">
-                                {{ 'addprovider.email'|trans }}
+                                {{ 'editprovider.email'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -422,7 +422,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputTelephone" class="control-label col-sm-2">
-                                {{ 'addprovider.telephone'|trans }}
+                                {{ 'editprovider.telephone'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -434,7 +434,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputMobile" class="control-label col-sm-2">
-                                {{ 'addprovider.mobile'|trans }}
+                                {{ 'editprovider.mobile'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -446,7 +446,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputFax" class="control-label col-sm-2">
-                                {{ 'addprovider.fax'|trans }}
+                                {{ 'editprovider.fax'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -460,11 +460,11 @@
 
                     <div class="well">
                         <div class="well-form-title">
-                            {{ 'addprovider.bankingdetails'|trans }}
+                            {{ 'editprovider.bankingdetails'|trans }}
                         </div>
                         <div class="form-group">
                             <label for="inputIban" class="control-label col-sm-2">
-                                {{ 'addprovider.iban'|trans }}
+                                {{ 'editprovider.iban'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -476,7 +476,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputSwift" class="control-label col-sm-2">
-                                {{ 'addprovider.swift'|trans }}
+                                {{ 'editprovider.swift'|trans }}
                             </label>
                             <div class="col-sm-10">
                                 <input type="text"
@@ -492,10 +492,10 @@
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="pull-right">
                                 <a href="{{ path('atekia_flowly_expenses_manageproviders') }}" class="btn btn-danger">
-                                    <i class="fa fa-times fa-fw"></i> {{ 'addprovider.cancel'|trans }}
+                                    <i class="fa fa-times fa-fw"></i> {{ 'editprovider.cancel'|trans }}
                                 </a>
                                 <button type="submit" id ="submit" class="btn btn-primary">
-                                    <i class="fa fa-user fa-fw"></i> {{ 'addprovider.addprovider'|trans }}
+                                    <i class="fa fa-user fa-fw"></i> {{ 'editprovider.editprovider'|trans }}
                                 </button>
                             </div>
                         </div>
@@ -538,7 +538,7 @@
                 $('#messages').append('\
                     <div class="alert alert-danger">\
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>\
-                        {{ 'addprovider.requiredfail'|trans }}\
+                        {{ 'editprovider.requiredfail'|trans }}\
                     </div>');
 
                 $('label[for=inputRegName]').css('color', '#a94442');
@@ -557,7 +557,7 @@
                 $('#messages').append('\
                     <div class="alert alert-danger">\
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>\
-                        {{ 'addprovider.taxiderror'|trans }}\
+                        {{ 'editprovider.taxiderror'|trans }}\
                     </div>');
 
                 $('body').scrollTop(0);

@@ -199,13 +199,17 @@ manageproviders:
     action: Acción
     delete: Eliminar
     edit: Editar
-    confirmdelete: ¿Está seguro de que desea eliminar el proveedor <i>%name%</i>?
+    view: Ver
     addprovider: Añadir proveedor
+    remove: Eliminar
+    confirmremove: ¿Está seguro de que desea eliminar el proveedor <b>%provider%</b>?
+    remsuccess: Se ha eliminado correctamente el proveedor
+    remerror: El proveedor no se ha podido eliminar
 
 addprovider:
     title: añadir proveedor
     addprovider: Añadir proveedor
-    description: Complete todos los campos del formulario con la información del nuevo proveedor.
+    description: Complete los campos del formulario con la información del nuevo proveedor.
     id: ID
     taxid: NIF / Núm. IVA
     regname: Nombre fiscal
@@ -228,6 +232,39 @@ addprovider:
     taxiderror: El NIF o número de IVA introducido no es correcto.
     error: Ha ocurrido un error.
     taxidinuse: Ya existe un proveedor con el NIF o número de IVA facilitado.
+    ibanerror: El IBAN introducido no es correcto.
+    bizdetails: Datos de la empresa
+    locationdetails: Datos de ubicación
+    contactdetails: Datos de contacto
+    bankingdetails: Datos bancarios
+
+editprovider:
+    title: editar proveedor
+    editprovider: Editar proveedor
+    description: Modifique los campos del formulario con la información actualizada del proveedor.
+    id: ID
+    taxid: NIF / Núm. IVA
+    regname: Nombre fiscal
+    tradename: Nombre comercial
+    address: Dirección
+    postalcode: Código Postal
+    city: Población
+    province: Provincia / Estado
+    country: País
+    telephone: Teléfono
+    fax: Fax
+    mobile: Móvil
+    contactperson: Persona de contacto
+    email: Correo electrónico
+    iban: Cuenta corriente (IBAN)
+    swift: Código SWIFT
+    cancel: Cancelar
+    success: El proveedor se ha modificado correctamente.
+    requiredfail: Complete todos los campos obligatorios.
+    taxiderror: El NIF o número de IVA introducido no es correcto.
+    error: Ha ocurrido un error.
+    taxidinuse: Ya existe un proveedor con el NIF o número de IVA facilitado.
+    ibanerror: El IBAN introducido no es correcto.
     bizdetails: Datos de la empresa
     locationdetails: Datos de ubicación
     contactdetails: Datos de contacto

@@ -47,16 +47,16 @@ atekia_flowly_expenses_manageproviders:
     defaults: { _controller: AtekiaFlowlyBundle:Expenses:manageproviders }
 
 atekia_flowly_expenses_managproviders_removeprovider:
-    path:  /expenses/providers/remove/{user}
-    defaults: { _controller: AtekiaFlowlyBundle:Security:enable, active: false }
+    path:  /expenses/providers/remove/{id}
+    defaults: { _controller: AtekiaFlowlyBundle:Expenses:removeprovider }
     requirements:
-        user:  \d+
+        id:  \d+
 
 atekia_flowly_expenses_editprovider:
-    path:  /expenses/providers/provider/{userid}
-    defaults: { _controller: AtekiaFlowlyBundle:Security:editprovider }
+    path:  /expenses/providers/provider/{id}
+    defaults: { _controller: AtekiaFlowlyBundle:Expenses:editprovider }
     requirements:
-        userid:  \d+
+        id:  \d+
 
 atekia_flowly_expenses_addprovider:
     path:  /expenses/providers/add
