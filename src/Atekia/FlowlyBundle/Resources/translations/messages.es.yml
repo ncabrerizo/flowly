@@ -51,8 +51,8 @@ manageusers:
     enable: Habilitar
     disable: Deshabilitar
     edit: Editar
-    confirmenable: ¿Está seguro de que desea habilitar el usuario <i>%user%</i>?
-    confirmdisable: ¿Está seguro de que desea deshabilitar el usuario <i>%user%</i>?
+    confirmenable: ¿Está seguro de que desea habilitar el usuario <b>%user%</b>?
+    confirmdisable: ¿Está seguro de que desea deshabilitar el usuario <b>%user%</b>?
     adduser: Añadir usuario
     admin: Administrador
     user: Usuario
