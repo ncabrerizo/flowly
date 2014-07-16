@@ -154,11 +154,22 @@ class RevenuesController extends Controller
 
             }
 
-            return $this->render('AtekiaFlowlyBundle:Revenues:addclient.html.twig',
-                [
-                    'data' => $data,
-                    'result' => $result
-                ]);
+            if ($result == 'ok') {
+
+                return $this->redirect(
+                    $this->generateUrl("atekia_flowly_revenues_manageclients", [ 'result' => 'addok' ])
+                );
+
+
+            } else {
+
+                return $this->render('AtekiaFlowlyBundle:Revenues:addclient.html.twig',
+                    [
+                        'data' => $data,
+                        'result' => $result
+                    ]);
+
+            }
 
         } else {
 

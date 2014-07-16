@@ -16,6 +16,14 @@
                 </div>
             </div>
             <div id="messages">
+                {% if app.request.get('result') is defined and app.request.get('result') == 'addok' %}
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        {{ 'manageproviders.addsuccess'|trans }}
+                    </div>
+                {% endif %}
                 {% if app.request.get('result') is defined and app.request.get('result') == 'remok' %}
                 <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">

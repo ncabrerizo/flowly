@@ -154,11 +154,22 @@ class ExpensesController extends Controller
 
             }
 
-            return $this->render('AtekiaFlowlyBundle:Expenses:addprovider.html.twig',
-                [
-                    'data' => $data,
-                    'result' => $result
-                ]);
+            if ($result == 'ok') {
+
+                return $this->redirect(
+                    $this->generateUrl("atekia_flowly_expenses_manageproviders", [ 'result' => 'addok' ])
+                );
+
+
+            } else {
+
+                return $this->render('AtekiaFlowlyBundle:Expenses:addprovider.html.twig',
+                    [
+                        'data' => $data,
+                        'result' => $result
+                    ]);
+
+            }
 
         } else {
 

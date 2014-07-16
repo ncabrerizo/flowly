@@ -220,8 +220,9 @@ manageproviders:
     addprovider: Añadir proveedor
     remove: Eliminar
     confirmremove: ¿Está seguro de que desea eliminar el proveedor <b>%provider%</b>?
-    remsuccess: Se ha eliminado correctamente el proveedor
-    remerror: El proveedor no se ha podido eliminar
+    remsuccess: El proveedor se ha eliminado correctamente.
+    addsuccess: El proveedor se ha añadido correctamente.
+    remerror: El proveedor no se ha podido eliminar.
 
 addprovider:
     title: añadir proveedor
@@ -244,7 +245,6 @@ addprovider:
     iban: Cuenta corriente (IBAN)
     swift: Código SWIFT
     cancel: Cancelar
-    success: El proveedor se ha añadido correctamente.
     requiredfail: Complete todos los campos obligatorios.
     taxiderror: El NIF o número de IVA introducido no es correcto.
     error: Ha ocurrido un error.
@@ -315,8 +315,9 @@ manageclients:
     addclient: Añadir cliente
     remove: Eliminar
     confirmremove: ¿Está seguro de que desea eliminar el cliente <b>%client%</b>?
-    remsuccess: Se ha eliminado correctamente el cliente
-    remerror: El cliente no se ha podido eliminar
+    remsuccess: El cliente se ha eliminado correctamente.
+    addsuccess: El cliente se ha añadido correctamente.
+    remerror: El cliente no se ha podido eliminar.
 
 addclient:
     title: añadir cliente
@@ -339,7 +340,6 @@ addclient:
     iban: Cuenta corriente (IBAN)
     swift: Código SWIFT
     cancel: Cancelar
-    success: El cliente se ha añadido correctamente.
     requiredfail: Complete todos los campos obligatorios.
     taxiderror: El NIF o número de IVA introducido no es correcto.
     error: Ha ocurrido un error.
